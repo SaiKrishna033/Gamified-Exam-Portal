@@ -8,18 +8,14 @@
                 <input  class="gh" type="email" ngModel  name="email" id="" placeholder="Enter your email">
                 <input  class="gh" type="password" ngModel name="password" placeholder="Enter your password" required>
                  <div class="form-group">
-
-
-    <div class="custom-select">
-        <select  id="teacher-type" name="userType" required>
-            <option value="" disabled selected>Select Registration Type</option>
-            <option value="teacher">I am a Teacher</option>
-            <option value="student">I am a Student</option>
-        </select>
-    </div>
-    
-</div>
-
+                    <div class="custom-select">
+                        <select ngModel id="teacher-type" name="userType" required>
+                            <option value="" disabled selected>Select Registration Type</option>
+                            <option value="teacher">I am a Teacher</option>
+                            <option value="student">I am a Student</option>
+                        </select>
+                    </div>
+                 </div>
                 <button (click)="handleSubmit(myform)"  >Signup</button>
             </form>
             <div class="links">
