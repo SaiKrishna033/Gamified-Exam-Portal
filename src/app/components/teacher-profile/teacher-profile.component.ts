@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./teacher-profile.component.scss']
 })
 export class TeacherProfileComponent {
+  teacherName: string = '';
+  teacherLivingCity: string = '';
+  teacherContactNumber: string = '';
+  teacherEmail: string = '';
 
+  intrestedSchool: string = '';
+  intrestedSchoolLocation: string = '';
+
+  question: string = '';
 }

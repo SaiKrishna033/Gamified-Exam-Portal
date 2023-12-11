@@ -4,9 +4,9 @@
 
     <div id="main-box">
       <div class="form-column">
-        <input type="text" class="form-field" placeholder="Enter Your Name">
-        <input type="text" class="form-field" placeholder="Enter Your City">
-        <input type="text" class="form-field" placeholder="Enter Your Contact Number">
+        <input [(ngModel)]="teacherName" type="text" class="form-field" placeholder="Enter Your Name">
+        <input [(ngModel)]="teacherLivingCity" type="text" class="form-field" placeholder="Enter Your City">
+        <input [(ngModel)]="teacherContactNumber" type="text" class="form-field" placeholder="Enter Your Contact Number">
           <p class="additional-text">Are you Interested in a Plan for School or Private institution?</p>
 
 
@@ -16,12 +16,12 @@
         </div>
 
 
-        <input type="text" class="form-field" placeholder="What is the Name of It">
-   <input type="text" class="form-field" placeholder="Location">
+        <input [(ngModel)]="intrestedSchool" type="text" class="form-field" placeholder="What is the Name of It">
+        <input [(ngModel)]="intrestedSchoolLocation" type="text" class="form-field" placeholder="Location">
       </div>
 
       <div class="form-column">
-        <input type="text" class="form-field" placeholder="Enter Your Mail ID">
+        <input [(ngModel)]="teacherEmail" type="text" class="form-field" placeholder="Enter Your Mail ID">
           <p class="additional-text">Which Role Suits you better?</p>
 
 <!-- set1 -->
@@ -55,7 +55,7 @@
 
 
           <p class="additional-text">Do you have any specific Question to ask?</p>
-        <input type="text" class="form-field" placeholder="Type Here">
+        <input [(ngModel)]="question" type="text" class="form-field" placeholder="Type Here">
       </div>
 
       <button id="submit-button">Submit</button>
