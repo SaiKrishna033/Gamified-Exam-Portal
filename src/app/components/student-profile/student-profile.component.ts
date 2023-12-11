@@ -1,4 +1,8 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { KuheduServiceService } from 'src/app/kuhedu-service.service';
+import { NgToastService } from 'ng-angular-popup';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-profile',
@@ -65,9 +69,107 @@ export class StudentProfileComponent {
   }
 
   validation() {
+    if (!this.studentName) {
+      this.toast.info({
+        detail: 'INFO',
+        summary: 'Please enter your name',
+        duration: 3000,
+        position: 'topRight',
+      });
+      return false;
+
+    } else if (!this.phoneNumeber) {
+      this.toast.info({
+        detail: 'INFO',
+        summary: 'Please enter your phone number',
+        duration: 3000,
+        position: 'topRight',
+      });
+      return false;
+
+    } else if (!this.classNumber) {
+      this.toast.info({
+        detail: 'INFO',
+        summary: 'Please select your class',
+        duration: 3000,
+        position: 'topRight',
+      });
+      return false;
+    } else if (!this.board) {
+      this.toast.info({
+        detail: 'INFO',
+        summary: 'Please select your board',
+        duration: 3000,
+        position: 'topRight',
+      });
+      return false;
+
+    } else if (!this.institute) {
+      this.toast.info({
+        detail: 'INFO',
+        summary: 'Please enter your institute name',
+        duration: 3000,
+        position: 'topRight',
+      });
+
+      return false;
+    }
     
+    return true;
+  }
+
+  constructor(
+    private http: HttpClient,
+    private khservice: KuheduServiceService,
+    private toast: NgToastService,
+    private router: Router
+  ) { }
+
+  handleSubmit() {
+
+    if (!this.validation()) {
+      return;
+    }
+
+    const ENDPOINT = "user/set-student-profile"
+    const body = {
+      // name: this.studentName, // TODO: add name field in the backend
+      phone_number: this.phoneNumeber,
+      class: this.classNumber,
+      board: this.board,
+      institute_name: this.institute
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+    });
+
+    this.http.post(this.khservice.baseUrl + ENDPOINT, body, { headers }).subscribe(
+      (res: any) => {
+        if (res.status === 200) {
+          this.toast.success({
+            detail: 'SUCCESS',
+            summary: 'Successfully Registered',
+            duration: 3000,
+            position: 'topRight',
+          });
+        }
+      }, (error) => {
+        console.error('Registration failed:', error);
+
+        // Assuming that the error response from the server contains a message
+        const errorMessage = error.error
+          ? error.error.message
+          : 'Unknown error';
+
+        this.toast.info({
+          detail: 'INFO',
+          summary: 'Registration Failed due to ' + errorMessage,
+          duration: 3000,
+          position: 'topRight',
+        });
+      }
+    )
   }
   
-  constructor() { }
-
 }
