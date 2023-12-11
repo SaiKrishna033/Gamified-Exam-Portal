@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.teacher_navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 65px;
+    justify-items: center;
+    align-items: center;
+    position: sticky;
+}
+
+.container {
+    margin: 40px;
+}
+
+.menu_logo {
+    margin-right: 20px;
+}
+
+.menu_items {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.menu_item {
+    margin-left: 20px;
+}
+
+
+/*Drop Down*/
+.dropbtn {
+    color: black;
+    border: 1px;
+    border-color: black;
+    cursor: pointer;
+    display: grid;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.dropdown-content button {
+    text-decoration: none;
+    display: block;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+.dropdown-content button:hover {
+    background-color: yellow;
+}
+
+.dropdown:hover .dropdown-content {
+    right: 0;
+    display: block;
+}
+
+.dropdown:hover .dropbtn {}
+
+/******/
+.top_section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile_text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.profile_username {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 4rem;
+    margin: 0;
+}
+
+.profile_usertag {
+    color: rgba(255, 255, 255, 0.50);
+    font-family: Poppins;
+    font-size: 0.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+}
+
+.profile_pic {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.profile_pic img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.profile_box {
+    border-radius: 17.246px;
+    background: rgba(0, 0, 0, 0.70);
+    backdrop-filter: blur(6.036231994628906px);
+    display: flex;
+    flex-direction: column;
+    object-fit: cover;
+    width: fit-content;
+    padding: 1rem;
+}
+
+.bottom_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+}
+
+.bottom_section a {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 17.767px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 15.99px;
+    /* 90% */
+    /*   margin-left: 2rem; */
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.bottom_section hr {
+    width: 10rem;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.60);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}

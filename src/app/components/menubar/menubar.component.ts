@@ -18,34 +18,36 @@ export class MenubarComponent {
   isRegister = false;
   logOut = false;
   forgetpassword = false;
-  userName:any = ''
-disablemenu = false;
-  constructor(private security : EncryptionService,private router: Router,
+  userName: any = ''
+  disablemenu = false;
+  constructor(private security: EncryptionService, private router: Router,
     private activateRoute: ActivatedRoute) {
 
   }
   ngOnInit() {
     this.router.events
-    .pipe(filter((event) => event instanceof NavigationEnd))
-    .subscribe(() => {
-      // Get the current route URL after navigation is complete
-      const currentRoute = this.router.url;
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        // Get the current route URL after navigation is complete
+        const currentRoute = this.router.url;
 
-      if(currentRoute=='/kuhu-pin'){
-        this.disablemenu=true
-      }
-      else{
-        this.disablemenu=false
-      }
-      console.log('Current Route:', currentRoute);
-    });
+        if (currentRoute == '/kuhu-pin') {
+          this.disablemenu = true
+        } else if (currentRoute == '/teacher-dashboard') {
+          this.disablemenu = true
+        }
+        else {
+          this.disablemenu = false
+        }
+        console.log('Current Route:', currentRoute);
+      });
 
     if (localStorage.getItem('id')) {
       this.logOut = true;
       this.userName = this.security.decryptData(String(localStorage.getItem('firstName')));
     }
   }
-  
+
   logout() {
     localStorage.clear();
     window.location.reload();
@@ -67,30 +69,29 @@ disablemenu = false;
     this.isRegister = true;
     this.isLogin = false;
   }
-  switchToRegister(event:any) {
-    if(event=='forgetpassword')
-    { this.isLogin = false;
+  switchToRegister(event: any) {
+    if (event == 'forgetpassword') {
+      this.isLogin = false;
       this.isRegister = false;
       this.forgetpassword = true;
 
     }
-    else{
+    else {
       this.isLogin = false;
       this.isRegister = true;
     }
-   
+
   }
-  switchToLogin(event:any) {
-    if(event=='forgetpassword')
-    {
+  switchToLogin(event: any) {
+    if (event == 'forgetpassword') {
       this.isLogin = false;
       this.isRegister = false;
       this.forgetpassword = true;
     }
-    else{
+    else {
       this.isLogin = true;
       this.isRegister = false;
     }
-   
+
   }
 }
