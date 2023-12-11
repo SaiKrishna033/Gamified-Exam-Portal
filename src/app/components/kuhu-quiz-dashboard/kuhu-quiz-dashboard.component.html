@@ -1,0 +1,113 @@
+<app-kuhedunewlogo></app-kuhedunewlogo>
+
+<div class="maindiv">
+  <div class="first">
+    <div class="leftheader">
+      <!-- <img class="topiclogo" src="../assets/atom.png" alt="" /> -->
+      <span class="topiclogo"></span>
+      <span class="tbold">{{ subject }}</span>
+    </div>
+
+    <div class="center">
+      <span class="heading">{{ topic_name }}</span>
+    </div>
+    <div class="leftheader">
+      <span class="iconpadding"></span>
+    </div>
+  </div>
+  <div class="second">
+    <div class="firstcontent">
+      <div class="padall">
+        <span class="heading">Practice Score Card</span>
+      </div>
+      <div class="profileCard">
+        <div class="profile">
+          <div>
+            <img
+              class="profilepic"
+              src="https://i.ibb.co/Dt52QgJ/user-profile-icon-free-vector-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <div class="userData">
+            <!-- <span>Anand Mahindra</span>
+            <span>@USERDANA325</span> -->
+          </div>
+        </div>
+        <div class="twocol">
+          <div class="items">
+            <div>
+              <label class="item">Test Code-</label>
+              <span>{{ mcq_template_id }}</span>
+            </div>
+            <div>
+              <label class="item">Class</label>
+              <span>6</span>
+            </div>
+            <div>
+              <label class="item">Board</label>
+              <span>CBSE</span>
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="items2">
+            <div>
+              <label class="item">Date of Submission:</label>
+              <span>14/09/2023</span>
+            </div>
+            <div>
+              <label class="item">Start Time:</label>
+              <span>12PM</span>
+            </div>
+            <div>
+              <label class="item">End Time:</label>
+              <span>12:45PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="third">
+      <div class="heading centerdiv">
+        <span>My Performance</span>
+      </div>
+      <div class="twocol2">
+        <div class="items">
+          <div>
+            <label class="item">Total Number of Questions:</label>
+            <span>{{ total_questions }}</span>
+          </div>
+          <div>
+            <label class="item">Average Time Spent per Question:</label>
+            <span>15 mins</span>
+          </div>
+          <div>
+            <label class="item">Not Attempted:</label>
+            <span>04</span>
+          </div>
+        </div>
+        <div class="items2">
+          <div>
+            <label class="item">Correct Answer:</label>
+            <span>12</span>
+          </div>
+          <div>
+            <label class="item">Incorrect Answer:</label>
+            <span>08</span>
+          </div>
+          <div>
+            <label class="item">Total Time Taken:</label>
+            <span>15 mins</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button type="button" class="btns" (click)="practiceAgain()">
+          Practice again
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

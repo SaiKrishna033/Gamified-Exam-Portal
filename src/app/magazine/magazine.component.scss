@@ -1,0 +1,33 @@
+h1{
+    font-family:'Roboto'
+  }
+  
+  body{
+    font-family:'Roboto'
+  }
+
+
+iframe {
+        width: 80vw; /* Adjust the width as needed */
+        height: 90vh; /* Adjust the height as needed */
+        border: none;
+        display: block; /* Ensures that the iframe behaves like a block element */
+        margin: auto; /* Centers the iframe horizontally */
+}
+button {
+    color: #3A6000;
+    background-color: white;
+    border: 5px solid #ccc;
+    padding: 5px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 15px;
+    border-color: #3A6000;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Added transition for smooth color change */
+}
+
+button:hover {
+    background-color: #3A6000;
+    color: white;
+    transform: scale(1.1); /* Example: Increase the button size on hover */
+}

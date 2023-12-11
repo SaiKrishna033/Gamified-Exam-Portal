@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'digital-7';
+    src: url('../../../assets/fonts/digital-7.ttf') format('truetype');
+}
+
+.clock {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.time {
+    width:100%;
+    //background-color: black;
+    font-family: 'digital-7', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    text-align: center;
+    //transform:translate(-50%,-50%);
+    text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+    letter-spacing: 0.05em;
+    font-size: 18px;
+    //padding: 5px 0;
+    //border-radius: 5px;
+   // border: 12px solid darkgray;
+}
+
+.playstop{
+    margin-top:-15px;
+    color:white;
+    cursor:pointer;
+}

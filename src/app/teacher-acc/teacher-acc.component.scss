@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,200;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+
+
+
+.profile_view {
+  border-radius: 7.7px;
+  border: 3.12px solid var(--Dark-Green, #3a6000);
+  background: #f2ffde;
+  box-shadow: 4.2px 4.2px 30.1px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 2rem;
+
+}
+
+.image_sec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.stats_sec {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.child {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 7.75px 10.333px 56.834px 0px rgba(0, 0, 0, 0.72);
+}
+
+.profile img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.teacher_name {
+  color: var(--Dark-Green, #3a6000);
+  font-family: Poppins;
+  font-size: 19.84px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.details p {
+  margin: 2px;
+  color: rgba(58, 96, 0, 0.5);
+  font-family: Poppins;
+  font-size: 16.534px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.stats_view {
+  text-align: center;
+}
+
+.stats_view h2 {
+  color: var(--Dark-Green, #3a6000);
+  font-family: Poppins;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.stats_table {
+  width: 100%;
+}
+
+.stats_table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stats_table {
+  text-align: left;
+  padding-bottom: 1rem;
+}
+
+.stat_name {
+  padding-left: 2rem;
+  color: var(--Dark-Green, #3a6000);
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.stat_value {
+  padding-right: 2rem;
+  text-align: right;
+  color: var(--Dark-Green, #3a6000);
+  text-align: right;
+  font-family: Poppins;
+  font-size: 16.534px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+hr.vertical {
+  background: #3a6000;
+  height: 20%;
+  width: 0;
+  border: 1px solid black;
+}

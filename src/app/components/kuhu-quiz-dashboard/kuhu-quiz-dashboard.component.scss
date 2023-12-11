@@ -1,0 +1,209 @@
+.maindiv {
+  width: auto;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+  
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 20%;
+}
+
+.first{
+  margin-bottom: 5px;
+  border: 3px solid black;
+  border-radius: 5px;
+  background: #009E60;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.second{
+  border: 3px solid black;
+  background: #009E60;
+  border-radius: 5px;
+}
+
+.topiclogo{
+  padding-left: 10px;
+  height: 40px;
+  width: 40px;
+}
+
+.padall{
+  margin: 5px;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.profile{
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.userData{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  margin-left: 20px !important;
+
+}
+.profilepic{
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.leftheader{
+  display: flex;
+  align-items: center;
+}
+
+.tbold{
+  font-weight: bolder;
+}
+
+.heading{
+  font-weight: bolder;
+  font-size: larger;
+}
+.center{
+    display: flex;
+    align-items: center;
+    margin-left: -80px;
+}
+.iconpadding{
+  padding-right: 5px;
+}
+.firstcontent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileCard{
+  // min-width: fit-content;
+  min-width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  background: #90EE90;
+  border: 3px solid black;
+  border-radius: 6px;
+}
+
+.twocol {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 5%;
+
+  padding-bottom: 25px;
+}
+.twocol2 {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 5%;
+
+  padding-bottom: 25px;
+}
+
+.items {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+.items2 {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0px;
+  text-align: start;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  
+  
+}
+.ff{
+  width: 100% !important;
+  margin-bottom: 20px;
+}
+.line{
+  border: 1px solid black;
+  margin-left: 50px;
+  margin-left: 80px;
+
+}
+
+.centerdiv{
+  display: block;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.third{
+  display: flex;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.btns{
+  background: rgba(2, 59, 101, 255);
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+span{
+  padding-left: 10px;
+}
+.item{
+  font-size: medium;
+  font-weight: bolder;
+}
+
+button{
+  cursor: pointer;
+}
+
+button[disabled]{
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+// media queries for responsive design
+@media screen  and (max-width: 600px) {
+.center {
+    display: flex;
+    align-items: center;
+    margin-left: 3px;
+  }
+    .topiclogo {
+      padding-left: 5px;
+      height: 30px;
+      width: 30px;
+    }
+        .profileCard {
+          display: flex;
+          flex-direction: column;
+          justify-content: left;
+          background: rgba(255, 235, 120, 255);
+          border: 1px solid black;
+          border-radius: 6px;
+        }
+}

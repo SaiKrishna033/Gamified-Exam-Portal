@@ -1,0 +1,286 @@
+{
+    "item": {
+        "mcq_template_id": "T01",
+        "pin": 321654,
+        "duration_in_seconds": 120,
+        "duration_in_seconds_per_item": 10,
+        "subject_id": "S01",
+        "subject": "Physics",
+        "topic_id": "T11",
+        "topic": "Light - Shadow and Reflections",
+        "total_questions": 10,
+        "difficulty_level": "Easy",
+        "questions": [
+            {
+                "isSelected": false,
+                "question": "Cite the phenomenon when light bends as it passes from one medium to another.",
+                "answers": [
+                    {
+                        "choice_number": "A)",
+                        "choice": "Reflection",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "B)",
+                        "choice": "Refraction",
+                        "isCorrect": true
+                    },
+                    {
+                        "choice_number": "C)",
+                        "choice": "Dispersion",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "D)",
+                        "choice": "Absorption",
+                        "isCorrect": false
+                    }
+                ],
+                "solution_explanation": "Refraction is the bending of light as it passes from one medium to another."
+            },
+            {
+                "isSelected": false,
+                "question": "Cite the process by which light is absorbed and converted into heat energy by a dark surface.",
+                "answers": [
+                    {
+                        "choice_number": "A)",
+                        "choice": "Reflection",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "B)",
+                        "choice": "Refraction",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "C)",
+                        "choice": "Dispersion",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "D)",
+                        "choice": "Absorption",
+                        "isCorrect": true
+                    }
+                ],
+                "solution_explanation": "Absorption is the process where light is absorbed and converted into heat energy by dark surfaces."
+            },
+            {
+                "isSelected": false,
+                "question": "Cite the phenomenon where light separates into its constituent colors when passing through a glass prism.",
+                "answers": [
+                    {
+                        "choice_number": "A)",
+                        "choice": "Reflection",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "B)",
+                        "choice": "Refraction",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "C)",
+                        "choice": "Dispersion",
+                        "isCorrect": true
+                    },
+                    {
+                        "choice_number": "D)",
+                        "choice": "Absorption",
+                        "isCorrect": false
+                    }
+                ],
+                "solution_explanation": "Dispersion occurs when light separates into its constituent colors when passing through a prism."
+            },
+            {
+                "isSelected": false,
+                "question": "To clarify a shadow's formation, what factor mainly determines the size of the shadow cast by an object?",
+                "answers": [
+                    {
+                        "choice_number": "A)",
+                        "choice": "The object's shape ",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "B)",
+                        "choice": "The object's color",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "C)",
+                        "choice": "The object's material",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "D)",
+                        "choice": "The object's size",
+                        "isCorrect": true
+                    }
+                ],
+                "solution_explanation": "The size of the shadow is primarily determined by the object's size. "
+            },
+            {
+                "isSelected": false,
+                "question": "To clarify the process of reflection, what type of surface provides a clear and sharp reflection?",
+                "answers": [
+                    {
+                        "choice_number": "A)",
+                        "choice": "Rough surface ",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "B)",
+                        "choice": "Polished surface",
+                        "isCorrect": true
+                    },
+                    {
+                        "choice_number": "C)",
+                        "choice": "Translucent surface",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "D)",
+                        "choice": "Opaque surface",
+                        "isCorrect": false
+                    }
+                ],
+                "solution_explanation": "Polished surfaces provide clear and sharp reflections. "
+            },
+            {
+                "isSelected": false,
+                "question": "To clarify how light bends, what is the angle between the incident ray and the normal line called?",
+                "answers": [
+                    {
+                        "choice_number": "A)",
+                        "choice": "Refraction angle",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "B)",
+                        "choice": "Incident angle ",
+                        "isCorrect": true
+                    },
+                    {
+                        "choice_number": "C)",
+                        "choice": "Reflection angle",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "D)",
+                        "choice": "Dispersion angle",
+                        "isCorrect": false
+                    }
+                ],
+                "solution_explanation": "The angle between the incident ray and the normal line is called the incident angle."
+            },
+            {
+                "isSelected": false,
+                "question": "Demonstrate how you can form a shadow by using a flashlight and an object. What conditions are necessary for shadow formation? ",
+                "answers": [
+                    {
+                        "choice_number": "A)",
+                        "choice": "Illuminated object and darkness ",
+                        "isCorrect": true
+                    },
+                    {
+                        "choice_number": "B)",
+                        "choice": "Illuminated object and sunlight ",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "C)",
+                        "choice": "Transparent object and darkness",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "D)",
+                        "choice": "Translucent object and sunlight ",
+                        "isCorrect": false
+                    }
+                ],
+                "solution_explanation": "Shadows are formed when an object is illuminated, and there is darkness. "
+            },
+            {
+                "isSelected": false,
+                "question": "Classify an object that casts a shadow that is larger than the object itself when illuminated. ",
+                "answers": [
+                    {
+                        "choice_number": "A)",
+                        "choice": "Small object ",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "B)",
+                        "choice": "Thin object ",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "C)",
+                        "choice": "Large object",
+                        "isCorrect": true
+                    },
+                    {
+                        "choice_number": "D)",
+                        "choice": "Transparent object",
+                        "isCorrect": false
+                    }
+                ],
+                "solution_explanation": "Large objects can cast shadows larger than themselves when illuminated."
+            },
+            {
+                "isSelected": false,
+                "question": "Classify the type of reflection that occurs when light bounces off a smooth and shiny surface like a mirror. ",
+                "answers": [
+                    {
+                        "choice_number": "A)",
+                        "choice": "Diffuse reflection",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "B)",
+                        "choice": "Regular reflection",
+                        "isCorrect": true
+                    },
+                    {
+                        "choice_number": "C)",
+                        "choice": "Refractive reflection",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "D)",
+                        "choice": "Scattering reflection",
+                        "isCorrect": false
+                    }
+                ],
+                "solution_explanation": "Regular reflection occurs when light reflects off a smooth and shiny surface. "
+            },
+            {
+                "isSelected": false,
+                "question": "Classify a phenomenon where light separates into its constituent colors.",
+                "answers": [
+                    {
+                        "choice_number": "A)",
+                        "choice": "Reflection",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "B)",
+                        "choice": "Refraction ",
+                        "isCorrect": false
+                    },
+                    {
+                        "choice_number": "C)",
+                        "choice": "Dispersion ",
+                        "isCorrect": true
+                    },
+                    {
+                        "choice_number": "D)",
+                        "choice": "Absorption",
+                        "isCorrect": false
+                    }
+                ],
+                "solution_explanation": "Dispersion is the phenomenon where light separates into its constituent colors. "
+            }
+        ]
+    }
+}

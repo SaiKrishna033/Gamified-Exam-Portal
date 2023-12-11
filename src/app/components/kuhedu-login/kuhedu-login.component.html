@@ -1,0 +1,20 @@
+<section class="container">
+  <div class="lo">
+        <div class="login-container">
+            <h1>Welcome Back</h1>
+            <form #myform="ngForm">
+                <input class="lof" type="text" name="email" ngModel placeholder="Enter Your Email id" required>
+                <input class="lof" type="password" name="password" ngModel placeholder=" Enter Password" required>
+                <button (click)="handleSubmit(myform.value)">Login</button>
+            </form>
+            <div class="links">
+              <p href="" class="he" (click)="handleForgetEmit()">Forgot Password?</p>
+
+              <a href="" class="he">Help</a>
+          </div>
+
+        <div class="gh" (click)="handleEmit()"> <p  class="heh">Don't have an account? <span class="ref"><h3 class="mj">Register here</h3></span> </p></div>
+        </div>
+  </div>
+
+</section>

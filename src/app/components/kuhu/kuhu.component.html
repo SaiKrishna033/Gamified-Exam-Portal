@@ -1,0 +1,260 @@
+<section class="container">
+  <div class="kuhu-item">
+    <div class="kuhu-header">
+      <div class="clockIcon">
+        <fa-icon
+          [icon]="_faClock"
+          size="2x"
+          [styles]="{ color: '#59a459' }"
+        ></fa-icon>
+      </div>
+      <div class="subject">{{ this.subject }}</div>
+      <div class="knowledgeIcon"></div>
+      <div class="clock">
+        <app-clock
+          [initialTime]="timeRemaining"
+          (timeRemaining)="onTimeRemaining($event)"
+          #clock1
+        ></app-clock>
+      </div>
+      <div class="topic">
+        <u>{{ this.topic }}</u>
+      </div>
+      <div class="knowledgeText"></div>
+      <div class="questionIndex">
+        {{ this.question_no }}/{{ this.total_questions }}
+      </div>
+      <div class="questionCount">
+        Questions : {{ this.total_questions }} | Level :
+        {{ this.difficulty_level }}
+      </div>
+      <div class="kuhuClock">
+        <app-clock
+          [initialTime]="timeRemaining_item"
+          (timeRemaining)="onTimeRemaining_item($event)"
+          #clock2
+        ></app-clock>
+      </div>
+    </div>
+    <p class="k-label">Question</p>
+    <div class="question">
+      <div class="questionContent">
+        Q{{ this.question_no }}.
+        {{ this.questions[this.question_no - 1].question }}
+      </div>
+    </div>
+    <p class="k-label">Choices</p>
+    <div class="answers">
+      <div
+        [ngClass]="this.startHover ? 'answer' : 'locked-answer'"
+        [ngClass]="
+          this.kuhu_state[this.question_no - 1].option1_state == '1'
+            ? 'correct-answer'
+            : this.kuhu_state[this.question_no - 1].option1_state == '0'
+            ? 'incorrect-answer'
+            : 'answer'
+        "
+        (click)="chosen(1)"
+        id="option1"
+      >
+        {{ this.questions[this.question_no - 1].answers[0].choice_number }}
+        {{ this.questions[this.question_no - 1].answers[0].choice }}
+        <fa-icon
+          [icon]="_faXmarkCircle"
+          size="1x"
+          *ngIf="this.kuhu_state[this.question_no - 1].option1_state == '0'"
+        ></fa-icon>
+        <fa-icon
+          [icon]="_faCheckCircle"
+          size="1x"
+          *ngIf="this.kuhu_state[this.question_no - 1].option1_state == '1'"
+        ></fa-icon>
+      </div>
+      <div
+        [ngClass]="this.startHover ? 'answer' : 'locked-answer'"
+        [ngClass]="
+          this.kuhu_state[this.question_no - 1].option2_state == '1'
+            ? 'correct-answer'
+            : this.kuhu_state[this.question_no - 1].option2_state == '0'
+            ? 'incorrect-answer'
+            : 'answer'
+        "
+        (click)="chosen(2)"
+        id="option2"
+      >
+        {{ this.questions[this.question_no - 1].answers[1].choice_number }}
+        {{ this.questions[this.question_no - 1].answers[1].choice }}
+        <fa-icon
+          [icon]="_faXmarkCircle"
+          size="1x"
+          *ngIf="this.kuhu_state[this.question_no - 1].option2_state == '0'"
+        ></fa-icon>
+        <fa-icon
+          [icon]="_faCheckCircle"
+          size="1x"
+          *ngIf="this.kuhu_state[this.question_no - 1].option2_state == '1'"
+        ></fa-icon>
+      </div>
+      <div
+        [ngClass]="this.startHover ? 'answer' : 'locked-answer'"
+        [ngClass]="
+          this.kuhu_state[this.question_no - 1].option3_state == '1'
+            ? 'correct-answer'
+            : this.kuhu_state[this.question_no - 1].option3_state == '0'
+            ? 'incorrect-answer'
+            : 'answer'
+        "
+        (click)="chosen(3)"
+        id="option3"
+      >
+        {{ this.questions[this.question_no - 1].answers[2].choice_number }}
+        {{ this.questions[this.question_no - 1].answers[2].choice }}
+        <fa-icon
+          [icon]="_faXmarkCircle"
+          size="1x"
+          *ngIf="this.kuhu_state[this.question_no - 1].option3_state == '0'"
+        ></fa-icon>
+        <fa-icon
+          [icon]="_faCheckCircle"
+          size="1x"
+          *ngIf="this.kuhu_state[this.question_no - 1].option3_state == '1'"
+        ></fa-icon>
+      </div>
+      <div
+        [ngClass]="this.startHover ? 'answer' : 'locked-answer'"
+        [ngClass]="
+          this.kuhu_state[this.question_no - 1].option4_state == '1'
+            ? 'correct-answer'
+            : this.kuhu_state[this.question_no - 1].option4_state == '0'
+            ? 'incorrect-answer'
+            : 'answer'
+        "
+        (click)="chosen(4)"
+        id="option4"
+      >
+        {{ this.questions[this.question_no - 1].answers[3].choice_number }}
+        {{ this.questions[this.question_no - 1].answers[3].choice }}
+        <fa-icon
+          [icon]="_faXmarkCircle"
+          size="1x"
+          *ngIf="this.kuhu_state[this.question_no - 1].option4_state == '0'"
+        ></fa-icon>
+        <fa-icon
+          [icon]="_faCheckCircle"
+          size="1x"
+          *ngIf="this.kuhu_state[this.question_no - 1].option4_state == '1'"
+        ></fa-icon>
+      </div>
+    </div>
+    <div class="item-navigation">
+      <div class="play" *ngIf="showPrev" (click)="prevClick()">
+        <fa-icon [icon]="_faArrowAltCircleLeft"></fa-icon>&nbsp;Previous
+      </div>
+      <div class="play" *ngIf="showPlay" (click)="startPlay()">Play</div>
+      <div class="play" *ngIf="!showPlay" (click)="pausePlay()">
+        {{ resumepauseText }}
+      </div>
+      <div class="play" #nextref *ngIf="showNext" (click)="nextClick()">
+        Next&nbsp;<fa-icon [icon]="_faArrowAltCircleRight"></fa-icon>
+      </div>
+      <div class="play" *ngIf="showSubmit" (click)="submitClick()">
+        Submit&nbsp;<fa-icon [icon]="_faArrowAltCircleRight"></fa-icon>
+      </div>
+    </div>
+
+    <div class="issue" (click)="changeState('issue')">
+      <fa-icon [icon]="_faHandPointUp" [styles]="{ color: 'white' }"></fa-icon
+      ><span class="k-label">&nbsp;&nbsp;<a>Report an issue</a></span>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="containerReport" id="kuhu-issue" *ngIf="!showState">
+    <div class="reportIssue">
+        <h3>Report this question</h3>
+        <div class="reportOptions">
+            <div>
+                <span>Not relevant to this question</span>
+            </div>
+            <div>
+                <span>Wrong Question</span>
+            </div>
+            <div>
+                <span>Problem with choices</span>
+            </div>
+            <div>
+                <span>Solution is not right</span>
+            </div>
+            <div>
+                <span>Technical error</span>
+            </div>
+        </div>
+        <div class="backButton">
+            <button (click)="changeState('back')">Back</button>
+        </div>
+    </div>
+</section> -->
+
+<div class="modal" [ngClass]="{ active: !showState }" *ngIf="!showState">
+  <div class="modal-content">
+    <span class="close" (click)="changeState('back')">&times;</span>
+    <div class="modal-body">
+      <!-- Modal content -->
+      <div class="mainReport">
+        <div class="reportTitle">Report this question</div>
+        <div>
+          <div class="reportOptions">
+            <div class="checkbox-option">
+              <label for="notRelevant">Not relevant to this question</label>
+              <input
+                type="checkbox"
+                id="notRelevant"
+                name="reportOption"
+                value="Not relevant to this question"
+              />
+            </div>
+            <div class="checkbox-option">
+              <label for="wrongQuestion">Wrong Question</label>
+              <input
+                type="checkbox"
+                id="wrongQuestion"
+                name="reportOption"
+                value="Wrong Question"
+              />
+            </div>
+            <div class="checkbox-option">
+              <label for="problemWithChoices">Problem with choices</label>
+              <input
+                type="checkbox"
+                id="problemWithChoices"
+                name="reportOption"
+                value="Problem with choices"
+              />
+            </div>
+            <div class="checkbox-option">
+              <label for="solutionNotRight">Solution is not right</label>
+              <input
+                type="checkbox"
+                id="solutionNotRight"
+                name="reportOption"
+                value="Solution is not right"
+              />
+            </div>
+            <div class="checkbox-option">
+              <label for="technicalError">Technical error</label>
+              <input
+                type="checkbox"
+                id="technicalError"
+                name="reportOption"
+                value="Technical error"
+              />
+            </div>
+          </div>
+          <div class="reportSubmit">
+            <button class="report" type="button">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

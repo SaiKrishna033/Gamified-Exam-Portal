@@ -1,0 +1,13 @@
+$altcolor1:#abb89796; //rgb(0 0 0 / 9%);
+
+.mediumLogo{
+    background-color: $altcolor1;
+    background-image:url('../../../assets/K-logo.png');
+    background-position: center;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    border-radius: 150px;
+    background-size: 50%;
+    border: 1px solid green;
+}

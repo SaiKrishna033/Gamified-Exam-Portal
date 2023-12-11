@@ -1,0 +1,79 @@
+
+
+
+
+<app-kuhedunewlogo></app-kuhedunewlogo>
+<section class="container">
+  <div id="pinArea">
+    <p class="font-h4">Enter K-Pin to start</p>
+    <form [formGroup]="pinform" (ngSubmit)="onSubmit()">
+      <input
+        type="text"
+        appApplyNumberOnly
+        class="pin_part"
+        name="pin_part_1"
+        formControlName="pin_part_1"
+        maxlength="1"
+        (keyup)="keytab($event)"
+        appAutoFocusOnLoad
+      />
+      <input
+        type="text"
+        appApplyNumberOnly
+        class="pin_part"
+        name="pin_part_2"
+        formControlName="pin_part_2"
+        maxlength="1"
+        (keyup)="keytab($event)"
+      />
+      <input
+        type="text"
+        appApplyNumberOnly
+        class="pin_part"
+        name="pin_part_3"
+        formControlName="pin_part_3"
+        maxlength="1"
+        (keyup)="keytab($event)"
+      />
+      <input
+        type="text"
+        appApplyNumberOnly
+        class="pin_part"
+        name="pin_part_4"
+        formControlName="pin_part_4"
+        maxlength="1"
+        (keyup)="keytab($event)"
+      />
+      <input
+        type="text"
+        appApplyNumberOnly
+        class="pin_part"
+        name="pin_part_5"
+        formControlName="pin_part_5"
+        maxlength="1"
+        (keyup)="keytab($event)"
+      />
+      <input
+        type="text"
+        appApplyNumberOnly
+        class="pin_part"
+        name="pin_part_6"
+        formControlName="pin_part_6"
+        maxlength="1"
+        (keyup)="keytab($event)"
+      />
+      <br />
+      <div *ngIf="displayError" class="error">PIN is incorrect. Re-enter!</div>
+      <br />
+      <button class="buttonClass" type="submit" [disabled]="!pinform.valid">
+        Start
+      </button>
+    </form>
+    <br />
+
+    <br />
+  </div>
+</section>
+<article>
+  <app-subjects-list></app-subjects-list>
+</article>

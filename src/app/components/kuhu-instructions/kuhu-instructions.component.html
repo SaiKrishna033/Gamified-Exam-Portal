@@ -1,0 +1,76 @@
+<app-kuhedunewlogo></app-kuhedunewlogo>
+<div class="maindiv">
+  <!-- <div class="upwardlogo">
+  <span><fa-icon [icon]="faWhatsapp" [styles]="{'stroke': 'white', 'color': '#FE0000'}" size="2x"></fa-icon></span>
+</div> -->
+  <div class="logo">
+    <!-- <img class="topiclogo"  src="https://media.wired.com/photos/59265ad0f3e2356fd8008f6b/master/w_1600,c_limit/MarchforScienceTA.gif" alt=""> -->
+    <h2 class="olive">{{ instructionData["subject_code"] }}</h2>
+    <h3 class="olive">K-Pincode : {{ instructionData["pincode"] }}</h3>
+  </div>
+
+  <div class="maincontent">
+    <div class="heading">
+      <h1 class="darkolive">{{ instructionData["topic_name"] }}</h1>
+    </div>
+    <div class="twocol">
+      <div class="items">
+        <div class="item">
+          <label>Class-</label>
+          <span>{{ instructionData["class"] }}</span>
+        </div>
+        <div class="item">
+          <label>Difficulty Level:</label>
+          <span>{{ instructionData["difficulty_level"] }}</span>
+        </div>
+        <div class="item">
+          <label>Best Score:</label>
+          <span>{{ instructionData["number_of_questions"] }}</span>
+        </div>
+      </div>
+      <div class="items2">
+        <div class="item">
+          <label>Created on:</label>
+          <span>{{ this.formattedDate }}</span>
+        </div>
+        <div class="item">
+          <label>Number of questions:</label>
+          <span>{{ instructionData["number_of_questions"] }}</span>
+        </div>
+        <div class="item">
+          <label>{{ instructionData["number_of_views"] }}</label>
+          <span class="space"></span>
+          <span>{{
+            instructionData["number_of_views"] > 1 ? "plays" : "play"
+          }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="secondcontent">
+    <div>
+      <h3 class="zeromargin">Read the Instructions before starting</h3>
+      <div class="list">
+        <ul>
+          <li class="font-h4">
+            A total of {{ instructionData["number_of_questions"] }} questions to
+            solve.
+          </li>
+          <li class="font-h4">
+            Solve all {{ instructionData["number_of_questions"] }} questions to
+            get a score card
+          </li>
+          <li class="font-h4">It is a time bound round</li>
+          <li class="font-h4">
+            No negative impact on score for incorrect answer
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="btncenter">
+      <button class="btncolor" (click)="navigateToQuiz()">Start</button>
+      <!-- <a class="btncolor"  routerLink="/kuhu-quiz-screen">Start</a> -->
+      <!-- <a routerLink="/kuhu">Proceed</a> -->
+    </div>
+  </div>
+</div>

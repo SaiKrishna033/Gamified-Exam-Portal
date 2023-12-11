@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Poppins-h-One';
+    src: url('../../assets/fonts/Poppins\ Bold\ 700.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-h-Two';
+    src: url('../../assets/fonts/Poppins\ Medium\ 500.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Reg-Text';
+    src: url('../../assets/fonts/Poppins\ Regular\ 400.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Bold-Text';
+    src: url('../../assets/fonts/Poppins\ Bold\ 700.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Medium-Text';
+    src: url('../../assets/fonts/Poppins\ Medium\ 500.ttf') format('truetype');
+}
+
+h1 {
+    font-family: 'Poppins-h-One';
+    font-size: 32px;
+}
+
+h2 {
+    font-family: 'Poppins-h-One';
+    font-size: 28px;
+}
+
+h3 {
+    font-family: 'Poppins-h-One';
+    font-size: 24px;
+}
+
+h4 {
+    font-family: 'Poppins-h-Two';
+    font-size: 16px;
+}
+
+h5 {
+    font-family: 'Poppins-Reg-Text';
+    font-size: 14px;
+}
+
+// h6 {
+//     font-family: 'Poppins-Bold-Text';
+//     font-size: 16px;
+// }
+
+h6 {
+    font-family: 'Poppins-Medium-Text';
+    font-size: 16px;
+}
+
+.faqs-container{
+    width: 90%;
+    height: auto;
+    padding: 100px 30px 30px 4em;
+    color: #3A6000;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+//---------------------------------------------------------------------
+@media screen and (max-width: 720px) {
+    .faqs-container{
+        padding:100px 30px 30px 15px;
+    } 
+}

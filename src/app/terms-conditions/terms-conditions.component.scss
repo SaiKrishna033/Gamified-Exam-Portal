@@ -1,0 +1,72 @@
+.public-info-container {
+    padding-top: 70px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    //background-color: whitesmoke;
+    width: 93%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    text-align: justify;
+    gap: 0;
+    color: #3A6000; //black;
+    padding: 0 50px 0 50px;
+}
+
+.points{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    //background-color: whitesmoke;
+    width: 93%;
+    color: #3A6000; //black;
+    padding: 0 50px 20px 50px;
+    text-align:justify;
+}
+
+.points li{
+    margin-bottom:1em;
+}
+
+h1,
+h2,
+h3 {
+    padding-left: 50px;
+}
+
+.companyName {
+    font-size: 16px;
+}
+
+@media screen and (max-width: 480px) {
+    p{
+        width: 88%;
+        font-size: 1em;
+        line-height: 1.25em;
+        padding: 0 20px 0 20px;
+    }
+
+    .points{
+        width: 88%;
+        font-size: 1em;
+        line-height: 1.25em;
+        padding: 0 20px 20px 20px;
+        
+    }
+
+    .companyName {
+        font-size: 14px;
+    }
+
+
+    h1,
+    h2,
+    h3 {
+        padding-left: 20px;
+    }
+}

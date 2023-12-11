@@ -1,0 +1,626 @@
+.second-div {
+  display: flex;
+
+}
+
+.header {
+  width: 1239px;
+  height: 65px;
+  flex-shrink: 0;
+  background: #E6FFBD;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.createclass {
+
+
+  border: 1px solid lightgray;
+  box-shadow: 2px 2px 5px lightgray;
+  margin: -18px 12px 15px 20px;
+  margin-bottom: 0px;
+  padding: 40px 55px 55px 50px;
+  /* Adjust padding values as needed */
+  text-align: center;
+
+
+}
+
+.createclass svg {
+  margin-bottom: 10px;
+}
+
+.createclass p {
+  margin: 10px 0;
+}
+
+
+
+.recently-created,
+.recently-viewed {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  margin: 20px;
+}
+
+.bold-text {
+  font-weight: bolder;
+  color: black;
+  margin-left: -2%;
+  margin-top: 2%;
+  font-size: x-large;
+}
+
+.create-class {
+  margin-top: 18%;
+  font-weight: bold;
+}
+
+
+.practice-paper {
+  font-weight: bold;
+}
+
+.top-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-container {
+  margin-left: auto;
+}
+
+.card {
+
+  border: 1px solid lightgray;
+  box-shadow: 2px 2px 5px lightgray;
+  margin: 8px;
+  border-radius: 10px;
+  margin-bottom: 0px;
+  padding: -4px 0px 0px 1px;
+  text-align: center;
+
+}
+
+.card i {
+  font-size: 24px;
+}
+
+.blue-button {
+  border-radius: 10px;
+    //background-color:  #FFC300;
+    background-image: linear-gradient(#0080FE, #0047AB);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+
+  cursor: pointer;
+  margin-top: 1px;
+  margin-left: 12%;
+}
+
+.blue-button1 {
+border-radius: 10px;
+  //background-color:  #FFC300;
+  background-image: linear-gradient(#0080FE, #0047AB);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+
+  cursor: pointer;
+  margin-top: 1px;
+  margin-left: 4.9%;
+}
+
+.blue-button2 {
+border-radius: 10px;
+  //background-color:  #FFC300;
+  background-image: linear-gradient(#0080FE, #0047AB);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+
+  cursor: pointer;
+  margin-top: 1px;
+  margin-left: 4.55%;
+
+  bottom: 10px;
+  left: 50%;
+
+}
+
+.arrow-icon {
+  margin-left: auto;
+  margin-top: 6%;
+  margin-left: 2.5%;
+}
+
+.arrow-icon i {
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .top-line {
+    flex-direction: column;
+  }
+
+  .icon-container {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .create-class {
+    margin-top: 0;
+  }
+}
+
+@import "../../../styles.scss";
+
+
+.cursordisable {
+  cursor: no-drop !important;
+}
+
+.disablecolor {
+  color: rgb(214, 216, 212) !important;
+}
+
+
+.circle {
+  background-color: #f2ffde;
+}
+
+.subject {
+  display: flex;
+}
+
+.subjectk {
+  flex: 1;
+  width: 100px !important;
+}
+
+.arrow {
+  font-size: 30px;
+  font-weight: bold;
+  color: darkolivegreen;
+  margin-top: 10px;
+}
+
+.arrowk {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+
+  transform: rotateY(180deg);
+  /* Flips the arrow horizontally */
+  /* Other arrow styles here */
+}
+
+.greencolor {
+  color: darkolivegreen;
+}
+
+.subjectr {
+  flex: 1;
+  margin-top: 10%;
+}
+
+.cv {
+  margin-left: 85% !important;
+}
+
+.subject01 {
+  display: flex;
+  margin-left: 38px;
+}
+
+.subject02 {
+  flex: 1;
+}
+
+.subject02 p {
+  padding-top: 155px;
+  font-weight: 500;
+}
+
+.subject03 {
+  display: flex;
+}
+
+.circle {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background-color: #f2ffde;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 4px rgba(85, 107, 47, 0.933);
+}
+
+.arrow {
+  color: rgba(85, 107, 47, 0.905);
+}
+
+.subjects-filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  width: 100%;
+  height: auto;
+  scroll-behavior: smooth;
+}
+
+.subjects-card {
+  width: 150px;
+  height: 200px;
+  margin-top: 10px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(80, 77, 77, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(80, 77, 77, 0.75);
+  // box-shadow: 10px 10px 5px 0px  rgba(80, 77, 77, 0.75);
+  cursor: pointer;
+}
+
+.subjects-card div {
+  width: 100%;
+  height: 50px;
+  margin-top: 107px;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  opacity: 0.8;
+}
+
+.subjects-card-detail {
+  width: 150px;
+  height: 200px;
+  margin-top: -100px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(80, 77, 77, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(80, 77, 77, 0.75);
+  // box-shadow: 10px 10px 5px 0px  rgba(80, 77, 77, 0.75);
+  cursor: pointer;
+}
+
+.subjects-card-detail div {
+  width: 100%;
+  height: 100px;
+  margin-top: 100px;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  opacity: 0.8;
+  padding-top: 5px;
+}
+
+#subjectInfo {
+  display: flex;
+  justify-content: center;
+  margin: 70px -5px 0px -5px;
+}
+
+#otherInfo {
+  display: flex;
+  justify-content: space-around;
+  margin: 0px -5px 0px -5px;
+}
+
+.subjects-card p {
+  padding-top: 12px;
+  text-align: center;
+  font-size: larger;
+}
+
+#btn-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1000px;
+  margin-bottom: -140px;
+  margin-top: 90px;
+}
+
+#previous-btn {
+  margin-left: 10em;
+  cursor: pointer;
+}
+
+#next-btn {
+  margin-right: 10em;
+  cursor: pointer;
+}
+
+#physics {
+  background: url('../../../assets/physicsimg.png');
+  background-color: #ffbe00;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position-x: center;
+  background-position-y: 20px;
+}
+
+#chemistry {
+  background: url('../../../assets/chemimg.png');
+  background-color: #ff6d55;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position-x: center;
+  background-position-y: 20px;
+}
+
+#biology {
+  background: url('../../../assets/bioimg.png');
+  background-color: #83e21f;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position-x: center;
+  background-position-y: 20px;
+}
+
+#mathematics {
+  background: url('../../../assets/mathsimg.png');
+  background-color: #a8badb;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position-x: center;
+  background-position-y: 20px;
+}
+
+// .physics {
+//   background: url('../../../assets/physicsimg.png');
+//   background-color: #ffbe00;
+//   background-repeat: no-repeat;
+//   background-size: 30%;
+//   background-position-x: center;
+//   background-position-y: 15px;
+// }
+
+
+// physics
+.card.physics {
+  background-color: #ffbe00;
+  // position: relative;
+}
+
+.card.physics .card-image-container {
+  height: 120px;
+  width: 150px;
+  overflow: hidden;
+}
+
+.card.physics .card-image {
+  width: 80%;
+  height: auto;
+  display: block;
+}
+
+.card.physics p {
+  text-align: center;
+  /* Center the text */
+}
+
+.card.physics .blue-button2 {
+  margin-top: 10px;
+  /* Adjust the margin as needed */
+}
+
+
+
+// chemistry
+
+.card.chemistry {
+  background-color: #ff6d55;
+  ;
+  // position: relative;
+}
+
+.card.chemistry .card-image-container {
+  height: 120px;
+  width: 150px;
+  overflow: hidden;
+}
+
+.card.chemistry .card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card.chemistry p {
+  text-align: center;
+  /* Center the text */
+}
+
+.card.chemistry .blue-button2 {
+  margin-top: 10px;
+  /* Adjust the margin as needed */
+}
+
+
+// .chemistry {
+//   background: url('../../../assets/chemimg.png');
+//   background-color: #ff6d55;
+//   background-repeat: no-repeat;
+//   background-size: 30%;
+//   background-position-x: center;
+//   background-position-y: 15px;
+// }
+
+// biology
+
+.card.biology {
+  background-color: #83e21f;
+  // position: relative;
+}
+
+.card.biology .card-image-container {
+  height: 120px;
+  width: 150px;
+  overflow: hidden;
+}
+
+.card.biology .card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card.biology p {
+  text-align: center;
+  /* Center the text */
+}
+
+.card.biology .blue-button2 {
+  margin-top: 10px;
+  /* Adjust the margin as needed */
+}
+
+
+// .biology {
+//   background: url('../../../assets/bioimg.png');
+//   background-color: #83e21f;
+//   background-repeat: no-repeat;
+//   background-size: 30%;
+//   background-position-x: center;
+//   background-position-y: 15px;
+// }
+
+
+// mathematics
+
+.card.mathematics {
+  background-color: #a8badb;
+  // position: relative;
+}
+
+.card.mathematics .card-image-container {
+  height: 120px;
+  width: 150px;
+  overflow: hidden;
+}
+
+.card.mathematics .card-image {
+  width: 80%;
+  height: auto;
+  display: block;
+}
+
+.card.mathematics p {
+  text-align: center;
+  /* Center the text */
+}
+
+.card.mathematics .blue-button2 {
+  margin-top: 10px;
+  /* Adjust the margin as needed */
+}
+
+
+/*------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 720px) {
+  #btn-div {
+    gap: 250px;
+    margin-bottom: 25px;
+    margin-top: 0px;
+  }
+
+  .subjects-card-detail {
+    margin-top: -100px;
+  }
+
+  #subjectInfo {
+    display: flex;
+    justify-content: center;
+    margin: 60px -5px 0px -5px;
+  }
+
+
+}
+
+@media only screen and (max-width: 768px) {
+  .createclass {
+    padding: 20px;
+  }
+
+  .cardbutton {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card .card-image-container {
+    height: 120px;
+    width: 100%;
+  }
+
+  .card .card-image {
+    width: 100%;
+  }
+}
+
+
+.main-div {
+  width: 100%;
+  padding-top: 50px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #fefefe;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.item1 {
+  display: flex;
+
+}
+
+.first1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardbutton {
+  display: flex;
+  flex-direction: column;
+}
+
+    .container {
+      width: 100%;
+      padding-top: 50px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      background-color: #E6FFBD ;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+.buttonofcard {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.second1 {
+  display: flex;
+  flex-direction: column;
+
+}

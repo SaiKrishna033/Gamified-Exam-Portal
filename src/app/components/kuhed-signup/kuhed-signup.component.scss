@@ -1,0 +1,174 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  text-align: center;
+  background-color: #f1f9db;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 3.5px solid #3a6000;
+  height: auto;
+}
+
+h1 ,label {
+  color: #333;
+}
+
+input {
+  width: 70%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 3px solid #3a6000;
+  border-radius: 10px;
+}
+
+button {
+  background-color: #014679;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 50%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+label{
+  margin-left: -190px;
+}
+
+button:hover {
+  background-color: #007BFF;
+
+}
+
+.container {
+  // width: 100vw;
+  // padding-top: 100px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: white; // #f2ffde;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.lo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}
+
+.forgot-password {
+  margin-top: 5px;
+  color: #014679;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.gh {
+  cursor:pointer;
+  margin-top: 10px;
+  background-color: white;
+}
+
+.heh {
+  color: #809c54;
+  text-decoration: none;
+  background-color: #f1f9db;
+}
+
+.ref {
+  text-decoration: none;
+}
+
+.links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.separator {
+  display: flex;
+
+  margin: 0 5px;
+}
+
+.he {
+  display: flex;
+  color: black;
+  /* Change this to the desired color value */
+  text-decoration: none;
+}
+
+
+.custom-select {
+  position: relative;
+  width: 70%;
+text-align: center;
+margin-left: 13.5%;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 3px solid #3a6000;
+  border-radius: 10px;
+  appearance: none;
+  /* Remove default arrow */
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Style the arrow icon */
+select::after {
+  /* Unicode character for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #3a6000;
+  pointer-events: none;
+  background-color: #f1f9db;
+}
+
+/* Style the select when it's focused */
+select:focus {
+  outline: none;
+  border-color: #007BFF;
+}
+
+/* Style the options */
+select option {
+  background-color: #f1f9db;
+  color: #333;
+}
+
+/* Style the select on hover */
+select:hover {
+  border-color: #007BFF;
+}
+
+/* Style the select when it's open */
+select:active,
+select:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

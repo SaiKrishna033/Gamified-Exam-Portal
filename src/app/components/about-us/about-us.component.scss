@@ -1,0 +1,231 @@
+@font-face {
+    font-family: 'Poppins-h-One';
+    src: url('../../../assets/fonts/Poppins\ Bold\ 700.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-h-Two';
+    src: url('../../../assets/fonts/Poppins\ Medium\ 500.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Reg-Text';
+    src: url('../../../assets/fonts/Poppins\ Regular\ 400.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Bold-Text';
+    src: url('../../../assets/fonts/Poppins\ Bold\ 700.ttf') format('truetype');
+}
+
+h1 {
+    font-family: 'Poppins-h-One';
+    font-size: 32px;
+}
+
+h2 {
+    font-family: 'Poppins-h-One';
+    font-size: 28px;
+}
+
+h3 {
+    font-family: 'Poppins-h-One';
+    font-size: 24px;
+}
+
+h4 {
+    font-family: 'Poppins-h-Two';
+    font-size: 16px;
+}
+
+h5 {
+    font-family: 'Poppins-Reg-Text';
+    font-size: 14px;
+}
+
+h6 {
+    font-family: 'Poppins-Bold-Text';
+    font-size: 16px;
+}
+
+
+
+.about-us-container {
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+    color: #3A6000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.abtus-banner {
+    background-image: url('../../../assets/about-us.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 200px;
+}
+
+.abtus-section-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    row-gap: 10px;
+    column-gap: 10px;
+    width: 60%;
+}
+
+.abtus-section-links a {
+    padding: 5px 10px 5px 10px;
+    background-color: #ffda7f;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px 0px #aaa;
+    cursor: pointer;
+}
+
+.abtus-section-links a:hover {
+    background-color: beige;
+}
+
+.abtus-content {
+    margin-top: 20px;
+    width: 80%;
+    text-align: justify;
+}
+
+.values-container,.diff-container {
+    width: 90%;
+    height: auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+$value-x: 120px;
+$value-y:75px;
+$diff-x:165px;
+$diff-y:120px;
+
+
+.value,.diff {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.value{
+    width: $value-x;
+}
+
+.diff{
+    width: $diff-x;
+}
+
+.value > .image {
+    width: $value-y;
+    height: $value-y;
+}
+
+.diff > .image{
+    width: $diff-x;
+    height: $diff-y;
+}
+
+.value-img1 {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/Student\ centric\ approach\ icon.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.value-img2 {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/Continuous\ improvement\ icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.value-img3 {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/Innovation\ icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.value-img4 {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/Equity\ and\ Inclusion\ icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.value-img5 {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/Innovation\ icon.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.value-text,.diff-text {
+    text-align: center;
+}
+
+.diff-img1 {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/Personalized\ Learning\ Journey\ icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.diff-img2 {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/Intelligent\ Progress\ Analysis.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.diff-img3 {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/Smart_Progress_Adaption.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.diff-img4 {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/Education\ Playfulness.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+

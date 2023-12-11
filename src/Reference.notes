@@ -1,0 +1,44 @@
+install node
+node -v     //check node version
+npm -v      //check npm version
+npm i -g @angular/cli --latest   //install angular cli
+ng version  //check Angular version
+ng add @angular/material --save  //install angular material with angular animation which will be done separately
+npm install @angular/animations --save //instead of ng add, ng install is done to bypass schematics error
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; //add it in app.module.ts
+BrowserAnimationsModule  //add in imports in app.module.ts
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';   //add it to app.module.ts
+//add to imports in module.ts
+FormsModule,
+ReactiveFormsModule           
+
+// Font awesome
+npm install @fortawesome/fontawesome-svg-core --save 
+npm install @fortawesome/free-brands-svg-icons -save
+npm install @fortawesome/free-regular-svg-icons --save
+npm install @fortawesome/free-solid-svg-icons --save
+npm install @fortawesome/angular-fontawesome --save
+
+//Firebase set One-Time
+npm install -g firebase-tools //a firebase project should have been created earlier at firebase.google.com
+firebase login                //with the email id used for creating firebase project
+firebase init
+
+//Do this to deploy everytime
+ng build
+cd to dist folder (under root folder, parent level of src folder)
+copy content of dist folder to public folder created with firebase init command
+firebase deploy  //from with public folder
+
+---------------
+//To use formcontrol in a component
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+//using javascript modules which are used as libraries. its a two step process
+npm i cryptoJS --save       //gets installed to node_modules folder which cannot be accessed directly from components
+ npm install @types/crypto-js --save-dev //now it can used in component as   import * as cryptoJS from 'crypto-js'
+
+
+https://faq.whatsapp.com/664523651672109   
+
+

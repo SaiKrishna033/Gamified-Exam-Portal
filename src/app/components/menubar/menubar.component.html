@@ -1,0 +1,119 @@
+<!-- <div class="menu">
+    <div class="menuOptions">
+        <img src="assets/Hamburger_icon.svg.png" style="width:25px;height:25px"/>
+    </div>
+    <a class="logo" routerLink="/home" ></a>
+    <div class="login"><a><fa-icon [icon]="faSignIn"></fa-icon>&nbsp;Login</a></div>
+</div>
+ -->
+<!-- <div class="menu">
+    <div class="menuOptions">
+        <img src="assets/Hamburger_icon.svg.png" style="width:25px;height:25px"/>
+    </div>
+    <a class="logo" routerLink="/home" ></a>
+    <div class="login"><a><fa-icon [icon]="faSignIn"></fa-icon>&nbsp;Login</a></div>
+</div>
+ -->
+
+
+<div *ngIf="!disablemenu" class="navbar">
+
+  <a class="logo" routerLink="/home"></a>
+  <div class="navOptions">
+    <div class="navbar-container container">
+      <input type="checkbox" name="" id="" />
+      <div class="hamburger-lines">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>
+
+      <ul class="menu-items">
+
+        <li class="link">
+          <a class="font-h4-bold cv" routerLink="/home">Home</a>
+        </li>
+        <li class="link">
+          <a class="font-h4-bold cv" routerLink="/kuhu-pin">Practice</a>
+        </li>
+        <li class="link">
+          <a class="font-h4-bold cv" href="http://kuhedu.com/school-app">Assessment</a>
+        </li>
+
+        <div class="dropdown">
+          <button class="dropbtn">Magazine</button>
+          <div class="dropdown-content">
+            <button routerLink="/magazine">Latest Edition</button>
+            <button>View All</button>
+          </div>
+        </div>
+        <!-- <li class="link">
+          <a class="font-h4-bold cv" routerLink="">Offerings</a>
+        </li> -->
+        <!-- <li class="link">
+          <a class="font-h4-bold cv" routerLink="">Contact&nbsp;Us</a>
+        </li> -->
+        <li class="link">
+          <a class="font-h4-bold cv" routerLink="/about-us">About&nbsp;Us</a>
+        </li>
+        <!-- <li class="link"><a class="font-h4-bold cv" routerLink="">Plans</a></li> -->
+
+        <!-- <li class="link"><a class="font-h4-bold cv" routerLink="">FAQ</a></li> -->
+
+        <!-- <li class="link"><a href="#assessment">Assessment</a></li> -->
+        <li class="link">
+          <a class="font-h4-bold cv" routerLink="/faqs">FAQs</a>
+        </li>
+        <div class="login" *ngIf="!logOut" (click)="openLogin()">
+          <a style="color: white; font-weight: 500; padding: 10px">Login</a>
+        </div>
+        <div class="login" *ngIf="logOut" (click)="logout()">
+          <a style="color: white; font-weight: 500; padding: 10px">Logout</a>
+        </div>
+        <div class="login" *ngIf="!logOut" (click)="openRegister()">
+          <a style="color: white; font-weight: 500; padding: 10px">Signup</a>
+        </div>
+        <div class="login" *ngIf="logOut">
+          <a style="color: white; font-weight: 500; padding: 10px">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1236_705)">
+                <path
+                  d="M7 8C8.38071 8 9.5 6.88071 9.5 5.5C9.5 4.11929 8.38071 3 7 3C5.61929 3 4.5 4.11929 4.5 5.5C4.5 6.88071 5.61929 8 7 8Z"
+                  stroke="#000001" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M2.73 11.9001C3.17624 11.1676 3.80341 10.5622 4.55121 10.1422C5.29901 9.72211 6.14229 9.50146 7 9.50146C7.85771 9.50146 8.70099 9.72211 9.44879 10.1422C10.1966 10.5622 10.8238 11.1676 11.27 11.9001"
+                  stroke="#000001" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M7 13.5C10.5899 13.5 13.5 10.5899 13.5 7C13.5 3.41015 10.5899 0.5 7 0.5C3.41015 0.5 0.5 3.41015 0.5 7C0.5 10.5899 3.41015 13.5 7 13.5Z"
+                  stroke="#000001" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+              <defs>
+                <clipPath id="clip0_1236_705">
+                  <rect width="14" height="14" fill="white" />
+                </clipPath>
+              </defs>
+            </svg> </a>{{ userName }}
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="modalOpen" class="custom-modal-overlay">
+  <div class="custom-modal">
+    <div class="modal-header">
+      <span class="close-button" (click)="closeModal()">&times;</span>
+    </div>
+    <div class="modal-content">
+      <div *ngIf="isRegister">
+        <app-kuhed-signup (navigateToLogin)="switchToLogin($event)"></app-kuhed-signup>
+      </div>
+      <div *ngIf="isLogin">
+        <app-kuhedu-login (navigateToRegister)="switchToRegister($event)"></app-kuhedu-login>
+      </div>
+      <div *ngIf="forgetpassword">
+        <app-forgotpassword></app-forgotpassword>
+      </div>
+    </div>
+  </div>
+</div>

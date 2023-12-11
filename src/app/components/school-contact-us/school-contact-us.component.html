@@ -1,0 +1,50 @@
+
+
+    <div class="contact-container">
+        <div class="contact-message">
+            <h1>Do you represent any school?</h1>
+            <div class="contact-image"></div>
+            <h2>Interested to know more?</h2>
+            <h3>We will call you</h3>
+        </div>
+
+
+        <div class="contact-form">
+            <div class="contact-formk">
+            <form>
+                <div class="form-group">
+                    <label for="email">✉</label>
+                    <input [(ngModel)]="email" type="email" id="email" name="email" placeholder="Email ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">👤</label>
+                    <input [(ngModel)]="full_name" type="text" id="name" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">📱</label>
+                    <input [(ngModel)]="mobile" type="tel" id="mobile" name="mobile" placeholder="Mobile" required>
+                </div>
+                <div class="form-group">
+                    <label for="teacher-type">🏫</label>
+                    <select id="teacher-type" name="teacher-type" required [(ngModel)]="type">
+                        <option value="know-more">I am a school teacher</option>
+                        <option value="school-teacher">I am a private tutor</option>
+                        <option value="school-teacher">I am a parent</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="school-name">🏢</label>
+                    <input [(ngModel)]="school_name" type="text" id="school-name" name="school-name" placeholder="School Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment">💬</label>
+                    <textarea id="comment" name="comment" placeholder="Comment" [(ngModel)]="comment"></textarea>
+                </div>
+
+                <button (click)="submit()" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+

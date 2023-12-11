@@ -1,0 +1,43 @@
+<section class="container">
+  <div class="lo">
+        <div class="login-container" *ngIf="!signUp">
+            <h1>Welcome To Kuhedu</h1>
+            <form #myform="ngForm">
+                <input  class="gh" type="text" ngModel name="firstName" placeholder="Enter your first name" required>
+                <input  class="gh" type="text" ngModel  name="lastName" placeholder="Enter your lastname" required>
+                <input  class="gh" type="email" ngModel  name="email" id="" placeholder="Enter your email">
+                <input  class="gh" type="password" ngModel name="password" placeholder="Enter your password" required>
+                 <div class="form-group">
+
+
+    <div class="custom-select">
+        <select  id="teacher-type" name="userType" required>
+            <option value="" disabled selected>Select Registration Type</option>
+            <option value="teacher">I am a Teacher</option>
+            <option value="student">I am a Student</option>
+        </select>
+    </div>
+    
+</div>
+
+                <button (click)="handleSubmit(myform)"  >Signup</button>
+            </form>
+            <div class="links">
+                <a href="#" class="he"  (click)="handleForgetEmit()">Forgot Password?</a>
+
+              <a href="" class="he">Help</a>
+          </div>
+
+        <div *ngIf="!signUp" class="gh" (click)="handleEmit()"  > <p class="heh">Already have an account? <span class="ref" >Login here</span> </p></div>
+        </div>
+        <div class="login-container" *ngIf="signUp">
+            <h1>Verification Code Process</h1>
+            <form #secondform="ngForm">
+                <input type="text" ngModel name="code" placeholder="Enter your verification code" required>
+                <button (click)="handleVerification(secondform.value)" >Verify Your Code</button>
+            </form>
+        </div>
+  </div>
+
+</section>
+

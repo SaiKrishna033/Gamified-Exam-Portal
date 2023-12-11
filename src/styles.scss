@@ -1,0 +1,113 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    //vertical-align: baseline;
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color:white;
+}
+
+
+@font-face {
+    font-family: 'Poppins-h-One';
+    src: url('./assets/fonts/Poppins\ Bold\ 700.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-h-Two';
+    src: url('./assets/fonts/Poppins\ Medium\ 500.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Reg-Text';
+    src: url('./assets/fonts/Poppins\ Regular\ 400.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Bold-Text';
+    src: url('./assets/fonts/Poppins\ Bold\ 700.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Light-Text';
+    src: url('./assets/fonts/Poppins\ Light\ 300.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-ExtraLight-Text';
+    src: url('./assets/fonts/Poppins\ ExtraLight\ 275.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Thin-Text';
+    src: url('./assets/fonts/Poppins\ Thin\ 250.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-ThinItalic-Text';
+    src: url('./assets/fonts/Poppins\ Thin\ Italic\ 250.ttf') format('truetype');
+}
+
+
+.font-h1 {
+    font-family: 'Poppins-h-One';
+    font-size: 32px;
+}
+
+.font-h2 {
+    font-family: 'Poppins-h-One';
+    font-size: 28px;
+}
+
+.font-h3 {
+    font-family: 'Poppins-h-One';
+    font-size: 24px;
+}
+
+.font-h4 {
+    font-family: 'Poppins-h-Two';
+    font-size: 16px;
+}
+
+.font-h4-bold {
+    font-family: 'Poppins-Bold-Text';
+    font-size: 16px;
+}
+
+.font-h5 {
+    font-family: 'Poppins-Reg-Text';
+    font-size: 13px;
+}
+
+.font-h5-light{
+    font-family: 'Poppins-Light-Text';
+    font-size: 13px;
+}
+
+.font-h6-extralight{
+    font-family: 'Poppins-ExtraLight-Text';
+    font-size: 12px;
+}
+
+.font-h7-thin{
+    font-family: 'Poppins-Thin-Text';
+    font-size: 11px;
+}
+
+.font-h7-thinItalic{
+    font-family: 'Poppins-ThinItalic-Text';
+    font-size: 11px;
+    color:black;
+}
+
+
+
+
+

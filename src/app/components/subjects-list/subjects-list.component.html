@@ -1,0 +1,90 @@
+<article>
+    <div style="width:100%;text-align:center;margin-top:15px;">
+        <h2>Popular Practice sets</h2>
+    </div>
+
+    <div id="btn-div">
+        <button id="previous-btn" (click)="fetchNewData('left')">
+            <div [class]="this.page==1?'cursordisable disablecolor':'greencolor'" class="circle">
+                <p [class]="this.page==1?'cursordisable disablecolor':'greencolor'" class="arrowk">&#10140; </p>
+            </div>
+        </button>
+
+        <button id="next-btn" (click)="fetchNewData('right')">
+            <div [class]="this.reached_last_page?'cursordisable disablecolor':'greencolor'" class="circle ">
+                <p [class]="this.reached_last_page?'cursordisable disablecolor':'greencolor'" class="arrow">&#10140;</p>
+            </div>
+        </button>
+    </div>
+
+    <div class="subjects-filter-container">
+        <div *ngFor="let subject of instructionData" id="cards">
+
+            <div id="subjectInfo">
+                <span class="font-h5">{{subject.number_of_questions}} questions</span>
+            </div>
+            <div id="otherInfo">
+                <span class="font-h5" *ngIf="subject.subject_code=='PHY'">Physics</span>
+                <span class="font-h5" *ngIf="subject.subject_code=='BIO'">Biology</span>
+                <span class="font-h5" *ngIf="subject.subject_code=='CHM'">Chemistry</span>
+                <span class="font-h5" *ngIf="subject.subject_code=='MATH'">Mathematics</span>
+                <span class="font-h5">{{subject.class}}th grade</span>
+            </div>
+
+            <div (click)="redirect(subject.pincode)" [class]="getSubjectClass(subject.subject_code)"
+                class="subjects-card-detail">
+                <div style="text-align:center;vertical-align:middle">
+                    <span class="font-h5" *ngIf="subject.difficulty_level==1">Easy level</span>
+                    <span class="font-h5" *ngIf="subject.difficulty_level==2">Medium level</span>
+                    <span class="font-h5" *ngIf="subject.difficulty_level==3">Difficult level</span>
+                    <span class="font-h5" *ngIf="subject.difficulty_level==4">Advanced level</span>
+                    <span class="font-h5" *ngIf="subject.difficulty_level==5">Expert level</span>
+                    <br />
+                    <span style="padding:5px" class="font-h4">{{ subject.topic_name }}</span>
+                    <!-- <p>K-pin:{{subject.pincode}}</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- </div> -->
+</article>
+
+<article>
+    <div style="width:100%;text-align:center;margin-bottom:-20px">
+        <h2>Select a subject</h2>
+    </div>
+    <div class="subjects-filter-container">
+        <div class="subjects-card" id="physics" (click)="selectUnselectSubject('PHY')">
+            <img src="../../../assets/checked.png" style="width:25%"
+                [ngStyle]="{'visibility':this.selected_subject_code=='PHY' ? 'visible' : 'hidden'}">
+            <div>
+                <p class="font-h4-bold">Physics</p>
+            </div>
+        </div>
+        <div class="subjects-card" id="chemistry" (click)="selectUnselectSubject('CHM')">
+            <img src="../../../assets/checked.png" style="width:25%"
+                [ngStyle]="{'visibility':this.selected_subject_code=='CHM' ? 'visible' : 'hidden'}">
+            <div>
+                <p class="font-h4-bold">Chemistry</p>
+            </div>
+        </div>
+        <div class="subjects-card" id="biology" (click)="selectUnselectSubject('BIO')">
+            <img src="../../../assets/checked.png" style="width:25%"
+                [ngStyle]="{'visibility':this.selected_subject_code=='BIO' ? 'visible' : 'hidden'}">
+            <div>
+                <p class="font-h4-bold">Biology</p>
+            </div>
+        </div>
+        <div class="subjects-card" id="mathematics" (click)="selectUnselectSubject('MATH')">
+            <img src="../../../assets/checked.png" style="width:25%"
+                [ngStyle]="{'visibility':this.selected_subject_code=='MATH' ? 'visible' : 'hidden'}">
+            <div>
+                <p class="font-h4-bold">Mathematics</p>
+            </div>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,53 @@
+.bar{
+    width:100%;
+    height:50px;
+    background-color:black;
+    //position:fixed;
+
+    display:grid;
+    grid-template-columns: 10% 70% 20%;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    ".  message    button";    
+}
+
+.btndiv{
+    grid-area:button;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.message{
+    grid-area:message;
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display:flex;
+    justify-content: center;
+    align-items:flex-end;
+}
+
+.surveybtn{
+    color: white;
+    background-color: red;
+    padding: 6px;
+    border-radius: 25px;
+    cursor:pointer;
+}
+
+.surveybtn:hover{
+    box-shadow: 5px 3px 5px grey;
+}
+
+.closebtn{
+    background-color:red;
+    color:white;
+    border-radius:50px;
+    width:30px;
+    margin:10px;
+    margin-right:25px;
+    cursor: pointer;
+}
+
+.closebtn:hover{
+    box-shadow:5px 3px 5px grey;
+}

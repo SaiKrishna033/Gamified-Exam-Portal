@@ -1,0 +1,134 @@
+  .body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #3A6000;
+    /* Updated border color */
+
+  }
+
+  .container{
+    width: 100vw;
+    padding-top: 50px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 5px solid #3A6000;
+    /* Updated border color */
+    margin-top: 5%;
+    width: 20%;
+    margin-bottom: 2%;
+
+
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+  }
+
+  input,
+  button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+  }
+
+  .inp {
+    border: 3px solid #3A6000;
+    /* Updated border color     */
+    border-radius: 10px;
+  }
+
+  input[type="submit"] {
+    background-color: #012a48;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 30%;
+    margin-left: 35%;
+
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+
+  }
+
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .class-button {
+    flex-basis: calc(33.33% - 10px);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Added box-shadow transition */
+    color: #3498db;
+    font-weight: bold;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 6px rgba(24, 23, 23, 0.699) !important;
+
+
+  }
+
+  .class-button:hover {
+    background-color: #f2f2f2;
+  }
+
+  .board-container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+
+  }
+
+
+
+  .board-option input {
+    margin-right: 5px;
+  }
+
+
+
+/* Styles for screens with a width up to 767 pixels (mobile screens) */
+@media only screen and (max-width: 767px) {
+  form {
+    margin-top: 20%;
+    width: 70%; /* Adjusted width for mobile screens, can be 100% to occupy the full width */
+  }
+}

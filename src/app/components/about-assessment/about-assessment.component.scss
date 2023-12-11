@@ -1,0 +1,166 @@
+@font-face {
+    font-family: 'Poppins-h-One';
+    src: url('../../../assets/fonts/Poppins\ Bold\ 700.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-h-Two';
+    src: url('../../../assets/fonts/Poppins\ Medium\ 500.ttf') format('truetype');
+}
+
+
+h1 {
+    font-family: 'Poppins-h-One';
+    font-size: 32px;
+}
+
+h2 {
+    font-family: 'Poppins-h-One';
+    font-size: 28px;
+}
+
+h3 {
+    font-family: 'Poppins-h-One';
+    font-size: 24px;
+}
+
+h4 {
+    font-family: 'Poppins-h-Two';
+    font-size: 16px;
+}
+
+$img-width:300px;
+$img-height:300px;
+$img-width-x:375px;
+$img-height-x:375px;
+
+
+.page-container-assessment {
+    padding-top: 100px;
+    width: 100%;
+    height: auto;
+    color: #3A6000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.display-1 {
+    width: 80%;
+    min-height: 300px;
+    //border: 1px solid lightgray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.display-2 {
+    width: 80%;
+    min-height: 300px;
+    //border: 1px solid lightgray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#first, #second, #third, #fourth, #fifth:first-child{
+    padding-left:10em;
+}
+
+.text-div {
+    width: 65%;
+    text-align:justify;
+    //border: 1px solid red;
+}
+
+.text-div h3{
+    text-align: left;
+}
+
+.img-div {
+    width: 35%;
+    //border:1px solid blue;
+    justify-items: center;
+}
+
+.img1 {
+    background-image: url('../../../assets/kuh-assess.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:auto;
+    height:$img-height;
+}
+
+.img2 {
+    background-image: url('../../../assets/Have_question_that_make_learning_outcome_driven_icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:auto;
+    height:$img-height;
+}
+
+.img3 {
+    background-image: url('../../../assets/Make_educators_passionate_about_what_they_teach_icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:auto;
+    height:$img-height-x;
+}
+
+.img4 {
+    background-image: url('../../../assets/Ensure_the_learning_to_happen_icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:auto;
+    height:$img-height-x;
+}
+
+.img5 {
+    background-image: url('../../../assets/personalized\ assessment.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:auto;
+    height:$img-height-x;
+}
+
+//------------------------------------------------------------------------------
+
+@media screen and (max-width: 720px) {
+    .display-1 {
+        flex-direction:column-reverse;  
+    }
+    
+    .display-2 {
+        flex-direction:column;  
+    }
+    
+    #first, #second, #third, #fourth, #fifth:first-child{
+        padding-left:0;
+    }
+
+    .img1,.img2,.img3,.img4,.img5{
+        width:300px;
+
+    }
+
+    .img-div{
+        width:auto;
+    }
+
+    .text-div{
+        width:auto;
+    }
+
+    .img3,.img4,.img5{
+        margin-top: -70px;
+        margin-bottom: -50px;
+    }
+
+}

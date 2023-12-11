@@ -1,0 +1,111 @@
+@import '../../../styles.scss';
+
+.maindiv{
+  width: auto;
+  height: 90vh;
+  margin: 0px;
+  padding: 85px 10px 10px 10px;
+  //border: 1px solid black;
+  background: white; //rgba(241, 202, 3, 255);
+}
+
+.space{
+  margin: 2.5px;
+}
+
+.topiclogo{
+  height: 80px;
+  width: 80px;
+}
+
+.logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.upwardlogo{
+  display: flex;
+
+  justify-content: flex-end;
+}
+.maincontent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid black;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.secondcontent{
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.heading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.zeromargin{
+  margin: 0px !important;
+}
+
+.twocol{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+  margin-right: 10%;
+
+  padding-bottom: 25px;
+}
+.items{
+  display: flex;
+  flex-direction: column;
+
+}
+.items2 {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+}
+
+.list{
+  margin-left: 19px;
+}
+
+.list ul li{
+  font-size: small;
+}
+
+.btncenter{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin-top: 50px;
+  width:120px;
+}
+.btncolor{
+  width: 50%;
+  background: rgba(2, 59, 101, 255);
+  text-align: center;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.olive{
+  color: rgba(61, 94, 0, 255);
+}
+
+.darkolive{
+  color:rgba(79, 90, 1, 255);
+}
