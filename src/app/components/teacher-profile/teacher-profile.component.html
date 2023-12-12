@@ -11,13 +11,13 @@
 
 
         <div class="half-width-buttons  vv">
-          <button class="school-button">School</button>
-          <button class="school-button">Private Institution</button>
+          <button class="school-button" (click)="handleSchoolTypeButton('school')">School</button>
+          <button class="school-button" (click)="handleSchoolTypeButton('private_institute')">Private Institution</button>
         </div>
 
 
-        <input [(ngModel)]="intrestedSchool" type="text" class="form-field" placeholder="What is the Name of It">
-        <input [(ngModel)]="intrestedSchoolLocation" type="text" class="form-field" placeholder="Location">
+        <input [(ngModel)]="school_private_insititute_name" type="text" class="form-field" placeholder="What is the Name of It">
+        <input [(ngModel)]="intrestedSchoolCity" type="text" class="form-field" placeholder="Location">
       </div>
 
       <div class="form-column">
@@ -41,7 +41,7 @@
           </button>
         </div>
           <p class="additional-text">Do you have any specific Question to ask?</p>
-        <input [(ngModel)]="question" type="text" class="form-field" placeholder="Type Here">
+        <input [(ngModel)]="specific_question" type="text" class="form-field" placeholder="Type Here">
       </div>
 
       <button id="submit-button">Submit</button>
