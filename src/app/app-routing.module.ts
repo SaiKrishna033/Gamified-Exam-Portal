@@ -25,7 +25,7 @@ import { SchoolAppComponent } from './components/school-app/school-app.component
 import { TeacherAccComponent } from './teacher-acc/teacher-acc.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { HelpAndSupportComponent } from './components/help-and-support/help-and-support.component';
-
+import { Report1Component } from './report1/report1.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -52,6 +52,8 @@ const routes: Routes = [
   { path:"help-and-support", component: HelpAndSupportComponent},
   { path: 'tea', component: TeacherAccComponent },
   { path: 'for', component: ForgotpasswordComponent  },
+  { path: 'report1', component: Report1Component},
+
 
 ];
 

@@ -47,6 +47,7 @@ import { TeacherAccComponent } from './teacher-acc/teacher-acc.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { TeacherNavbarComponent } from './components/teacher-navbar/teacher-navbar.component';
 import { HelpAndSupportComponent } from './components/help-and-support/help-and-support.component';
+import { Report1Component } from './report1/report1.component';
 
 
 @NgModule({
@@ -87,6 +88,7 @@ import { HelpAndSupportComponent } from './components/help-and-support/help-and-
     ForgotpasswordComponent,
     TeacherNavbarComponent,
     HelpAndSupportComponent,
+    Report1Component,
   ],
   imports: [
 

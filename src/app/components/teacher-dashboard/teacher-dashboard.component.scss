@@ -390,7 +390,7 @@ border-radius: 10px;
 // physics
 .card.physics {
   background-color: #ffbe00;
-  // position: relative;
+  position: relative;
 }
 
 .card.physics .card-image-container {
@@ -422,7 +422,7 @@ border-radius: 10px;
 .card.chemistry {
   background-color: #ff6d55;
   ;
-  // position: relative;
+  position: relative;
 }
 
 .card.chemistry .card-image-container {
@@ -461,7 +461,7 @@ border-radius: 10px;
 
 .card.biology {
   background-color: #83e21f;
-  // position: relative;
+  position: relative;
 }
 
 .card.biology .card-image-container {
@@ -501,7 +501,7 @@ border-radius: 10px;
 
 .card.mathematics {
   background-color: #a8badb;
-  // position: relative;
+  position: relative;
 }
 
 .card.mathematics .card-image-container {
@@ -603,6 +603,7 @@ border-radius: 10px;
 
     .container {
       width: 100%;
+      padding-top: 50px;
       height: auto;
       display: flex;
       justify-content: center;
@@ -622,4 +623,281 @@ border-radius: 10px;
   display: flex;
   flex-direction: column;
 
+}
+
+
+
+
+
+
+
+
+
+
+
+//
+
+@import "../../../styles.scss";
+
+.cursordisable {
+  cursor: no-drop !important;
+}
+
+.disablecolor {
+  color: rgb(214, 216, 212) !important;
+}
+
+.circle {
+  background-color: #f2ffde;
+}
+
+.subject {
+  display: flex;
+}
+
+.subjectk {
+  flex: 1;
+  width: 100px !important;
+}
+
+.arrow {
+  font-size: 30px;
+  font-weight: bold;
+  color: darkolivegreen;
+  margin-top: 10px;
+}
+
+.arrowk {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+  transform: rotateY(180deg);
+}
+
+.greencolor {
+  color: darkolivegreen;
+}
+
+.subjectr {
+  flex: 1;
+  margin-top: 10%;
+}
+
+.cv {
+  margin-left: 85% !important;
+}
+
+.subject01 {
+  display: flex;
+  margin-left: 38px;
+}
+
+.subject02 {
+  flex: 1;
+}
+
+.subject02 p {
+  padding-top: 155px;
+  font-weight: 500;
+}
+
+.subject03 {
+  display: flex;
+}
+
+.circle {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background-color: #f2ffde;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 4px rgba(85, 107, 47, 0.933);
+}
+
+.arrow {
+  color: rgba(85, 107, 47, 0.905);
+}
+
+.subjects-filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  width: 100%;
+  height: auto;
+  scroll-behavior: smooth;
+}
+
+.subjects-card {
+  width: 150px;
+  height: 200px;
+  margin-top: 10px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(80, 77, 77, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(80, 77, 77, 0.75);
+  cursor: pointer;
+}
+
+.subjects-card div {
+  width: 100%;
+  height: 50px;
+  margin-top: 107px;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  opacity: 0.8;
+}
+
+.subjects-card-detail {
+  width: 150px;
+  height: 200px;
+  margin-top: -100px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(80, 77, 77, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(80, 77, 77, 0.75);
+  cursor: pointer;
+}
+
+.subjects-card-detail div {
+  width: 100%;
+  height: 100px;
+  margin-top: 100px;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  opacity: 0.8;
+  padding-top: 5px;
+}
+
+#subjectInfo {
+  display: flex;
+  justify-content: center;
+  margin: 70px -5px 0px -5px;
+}
+
+#otherInfo {
+  display: flex;
+  justify-content: space-around;
+  margin: 0px -5px 0px -5px;
+}
+
+.subjects-card p {
+  padding-top: 12px;
+  text-align: center;
+  font-size: larger;
+}
+
+#btn-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1000px;
+  margin-bottom: -140px;
+  margin-top: 90px;
+}
+
+#previous-btn {
+  margin-left: 10em;
+  cursor: pointer;
+}
+
+#next-btn {
+  margin-right: 10em;
+  cursor: pointer;
+}
+
+#physics {
+  background: url('../../../assets/physicsimg.png');
+  background-color: #ffbe00;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position-x: center;
+  background-position-y: 20px;
+}
+
+#chemistry {
+  background: url('../../../assets/chemimg.png');
+  background-color: #ff6d55;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position-x: center;
+  background-position-y: 20px;
+}
+
+#biology {
+  background: url('../../../assets/bioimg.png');
+  background-color: #83e21f;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position-x: center;
+  background-position-y: 20px;
+}
+
+#mathematics {
+  background: url('../../../assets/mathsimg.png');
+  background-color: #a8badb;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position-x: center;
+  background-position-y: 20px;
+}
+
+.physics {
+  background: url('../../../assets/physicsimg.png');
+  background-color: #ffbe00;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position-x: center;
+  background-position-y: 15px;
+}
+
+.chemistry {
+  background: url('../../../assets/chemimg.png');
+  background-color: #ff6d55;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position-x: center;
+  background-position-y: 15px;
+}
+
+.biology {
+  background: url('../../../assets/bioimg.png');
+  background-color: #83e21f;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position-x: center;
+  background-position-y: 15px;
+}
+
+.mathematics {
+  background: url('../../../assets/mathsimg.png');
+  background-color: #a8badb;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position-x: center;
+  background-position-y: 15px;
+}
+
+/* Media Query for screen width up to 720px */
+@media screen and (max-width: 720px) {
+  #btn-div {
+    gap: 250px;
+    margin-bottom: 25px;
+    margin-top: 0px;
+  }
+
+  .subjects-card-detail {
+    margin-top: -100px;
+  }
+
+  #subjectInfo {
+    display: flex;
+    justify-content: center;
+    margin: 60px -5px 0px -5px;
+  }
 }
