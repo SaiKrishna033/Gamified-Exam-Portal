@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { KuheduServiceService } from 'src/app/kuhedu-service.service';
+import { EncryptionService } from '../../shared/services/encryption.service';
 import { NgToastService } from 'ng-angular-popup';
 import { Router } from '@angular/router';
 
@@ -9,17 +10,17 @@ import { Router } from '@angular/router';
   templateUrl: './teacher-profile.component.html',
   styleUrls: ['./teacher-profile.component.scss'],
 })
-
 export class TeacherProfileComponent {
   constructor(
     private http: HttpClient,
     private khservice: KuheduServiceService,
     private toast: NgToastService,
-    private router: Router
+    private router: Router,
+    private keySvc: EncryptionService
   ) {}
 
   [x: string]: any;
-  teacherName: string = '';
+  // teacherName: string = '';
   teacherLivingCity: string = '';
   teacherContactNumber: string = '';
   teacherEmail: string = '';
@@ -28,6 +29,18 @@ export class TeacherProfileComponent {
   school_private_insititute_name: string = '';
   intrestedSchoolCity: string = ''; // city
   specific_question: string = '';
+
+  // get username decrypted from local storage
+  firstname = this.keySvc.decryptData(
+    localStorage.getItem('firstName') as string
+  );
+  lastname = this.keySvc.decryptData(
+    localStorage.getItem('lastName') as string
+  );
+
+  // TODO: Change to username when API is updated
+  // Treat as username for now
+  teacherName: string = this.firstname + ' ' + this.lastname;
 
   highlightedButtons: { [key: string]: boolean } = {};
   highlightedButtons2: { [key: string]: boolean } = {};
@@ -110,15 +123,15 @@ export class TeacherProfileComponent {
   // validate
   validate() {
     if (
-      this.teacherName === ''
-      || this.teacherLivingCity === ''
-      || this.teacherContactNumber === ''
-      || this.teacherEmail === ''
-      || this.role === ''
-      || this.school_private_insititute_interested === ''
-      || this.school_private_insititute_name === ''
-      || this.intrestedSchoolCity === ''
-      || this.specific_question === ''
+      this.teacherName === '' ||
+      this.teacherLivingCity === '' ||
+      this.teacherContactNumber === '' ||
+      this.teacherEmail === '' ||
+      this.role === '' ||
+      this.school_private_insititute_interested === '' ||
+      this.school_private_insititute_name === '' ||
+      this.intrestedSchoolCity === '' ||
+      this.specific_question === ''
     ) {
       return false;
     } else {
@@ -138,7 +151,7 @@ export class TeacherProfileComponent {
      * 1. School name must be at least 10 characters long
      * 2. Specific question must be at least 10 characters long
      * 3. Phone number must be 10 digits long
-    */
+     */
     if (this.validateEmail(this.teacherEmail) === false) {
       this.toast.warning({
         detail: 'INFO',
@@ -187,7 +200,6 @@ export class TeacherProfileComponent {
     }
 
     return true;
-
   }
 
   // API REQUEST SEC
@@ -237,14 +249,12 @@ export class TeacherProfileComponent {
           this.router.navigate(['/']);
         },
         (error) => {
-
           const errors = error.error.errors;
           // combine all errors into a single string
           let toastMessage = '';
           Object.keys(errors).forEach((key) => {
             toastMessage += errors[key] + '\n';
           });
-
 
           console.error('Error:', errors);
           console.log('Toast message:', toastMessage);
