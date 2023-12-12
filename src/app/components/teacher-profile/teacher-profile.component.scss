@@ -127,6 +127,11 @@ box-shadow: 2.1px 2.8px 18.9px 0px rgba(0, 0, 0, 0.25);
   animation: buttonHoverAnimation 0.5s ease-in-out;
 }
 
+.school-button-highlighted {
+  background-color: #0696fe;
+  color: white;
+}
+
 /* @keyframes definition */
 @keyframes submit-button {
   0% {

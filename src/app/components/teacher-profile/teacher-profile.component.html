@@ -23,37 +23,23 @@
       <div class="form-column">
         <input [(ngModel)]="teacherEmail" type="text" class="form-field" placeholder="Enter Your Mail ID">
           <p class="additional-text">Which Role Suits you better?</p>
-
-<!-- set1 -->
-
-          <div class="half-width-buttons">
-            <button class="school-button">School Teacher</button>
-            <button class="private-button leftb">Admin</button><br>       
-          </div>
-
-<!-- set2 -->
-
-          <div class="half-width-buttons">
-            <button class="school-button">Principal</button>
-            <button class="private-button leftb">Owner</button>     
-          </div>
-
-
-<!-- set3 -->
-
-          <div class="half-width-buttons">
-            <button class="blue-button">Private Tutor</button>
-            <button class="blue-button leftb">Staff</button>   
-          </div>
-          
-<!--set4  -->
-
-        <div class="half-width-buttons"> 
-          <button class="blue-button">HOD</button>
-          <button class="blue-button leftb">Other</button>
+        <div class="half-width-buttons" *ngFor="let part of roleButtonHumanReadable"
+        >
+          <button
+            class="school-button"
+            [class.school-button-highlighted]="isHighlighted(part[0])"
+            (click)="toggleHighlight(part[0])"
+          >
+            {{part[0]}}
+          </button>
+          <button
+            class="private-button leftb"
+            [class.school-button-highlighted]="isHighlighted(part[1])"
+            (click)="toggleHighlight(part[1])"
+          >
+            {{part[1]}}
+          </button>
         </div>
-
-
           <p class="additional-text">Do you have any specific Question to ask?</p>
         <input [(ngModel)]="question" type="text" class="form-field" placeholder="Type Here">
       </div>
