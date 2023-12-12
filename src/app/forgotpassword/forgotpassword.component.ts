@@ -22,8 +22,9 @@ export class ForgotpasswordComponent {
   ) { console.log("LOG: Forgot pass init") }
   
   // POST OTP
-  userEmail: string = '';
+  userEmail: string = '';   //initially set to an empty string
   sendotp() {
+    //check emial id 
     if(this.userEmail==''){
       this.toast.warning({
         detail: 'warning',
@@ -34,10 +35,11 @@ export class ForgotpasswordComponent {
       return
     }
 
+
+
+
     const ENDPOINT ="user/request-reset-password"
-    const body = {
-      email: this.userEmail
-    }
+    const body = {email: this.userEmail}
 
     this.http.post(this.khservice.baseUrl + ENDPOINT, body).subscribe(
       (res: any) => {
