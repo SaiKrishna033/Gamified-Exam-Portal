@@ -24,6 +24,8 @@ import { MagazineComponent } from './magazine/magazine.component';
 import { SchoolAppComponent } from './components/school-app/school-app.component';
 import { TeacherAccComponent } from './teacher-acc/teacher-acc.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { HelpAndSupportComponent } from './components/help-and-support/help-and-support.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -47,9 +49,9 @@ const routes: Routes = [
   { path: 'kuhedulogo', component: KuhedunewlogoComponent },
   { path: 'magazine', component: MagazineComponent },
   { path: 'assessment', component: SchoolAppComponent },
-  { path: 'tea', component: TeacherAccComponent},
+  { path:"help-and-support", component: HelpAndSupportComponent},
+  { path: 'tea', component: TeacherAccComponent },
   { path: 'for', component: ForgotpasswordComponent  },
-
 
 ];
 

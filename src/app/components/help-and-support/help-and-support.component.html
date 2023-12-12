@@ -1,1 +1,29 @@
-<p>help-and-support works!</p>
+<h1 class="values">Help and Support</h1>
+<div class="container">
+    <form class="form">
+        <h1 class="values">Write to us</h1>
+        <div class="mail">
+            <label for="mail-id">Mail ID</label>
+            <input placeholder="mail-id" type="email" class="mail-id" id="mail-id" required>
+        </div>
+
+        <div>
+            <label for="query-type">Query Type</label>
+            <select id="query-type" class="query-type" required>
+                <option value="" class="values">Select your query type</option>
+                <option value="practice-test" class="values">Practice Test</option>
+                <option value="puzzle" class="values">Puzzle</option>
+                <option value="progress-tracking" class="values">Progress Tracking</option>
+                <option value="achievements" class="values">Achievements</option>
+                <option value="payments" class="values">Payments</option>
+            </select>
+        </div>
+
+        <div class="query">
+            <textarea id="query" rows="4" required class="values">Mention your query in details</textarea>
+        </div>
+        <div class="button">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
