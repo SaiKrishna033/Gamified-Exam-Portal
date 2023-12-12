@@ -24,8 +24,15 @@ export class ForgotpasswordComponent {
   // POST OTP
   userEmail: string = '';
   sendotp() {
-    this.clickedSendOtp = true;
-    this.intial = false;
+    if(this.userEmail==''){
+      this.toast.warning({
+        detail: 'warning',
+        summary: 'Enter your email address',
+        duration: 3000,
+        position: 'topRight',
+      });
+      return
+    }
 
     const ENDPOINT ="user/request-reset-password"
     const body = {
@@ -36,11 +43,13 @@ export class ForgotpasswordComponent {
       (res: any) => {
         if (res.status === 200) {
           this.clickedSendOtp = true;
+          this.intial = false;
           this.toast.success({
             detail: 'SUCCESS',
             summary: 'Successfully Requested OTP',
             duration: 3000,
             position: 'topRight',
+
           });
         }
       }, (error) => {
