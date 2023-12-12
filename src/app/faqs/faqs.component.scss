@@ -1,76 +1,77 @@
-@font-face {
-    font-family: 'Poppins-h-One';
-    src: url('../../assets/fonts/Poppins\ Bold\ 700.ttf') format('truetype');
-}
+    body {
+        background-color: #e6ffbd;
+    }
 
-@font-face {
-    font-family: 'Poppins-h-Two';
-    src: url('../../assets/fonts/Poppins\ Medium\ 500.ttf') format('truetype');
-}
+    .nav_padding {
+        padding-top: 5rem;
+    }
 
-@font-face {
-    font-family: 'Poppins-Reg-Text';
-    src: url('../../assets/fonts/Poppins\ Regular\ 400.ttf') format('truetype');
-}
+    .container {
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+        max-width: auto;
+        height: 485px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 5px solid #3A6000;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #f1ffde;
+    }
 
-@font-face {
-    font-family: 'Poppins-Bold-Text';
-    src: url('../../assets/fonts/Poppins\ Bold\ 700.ttf') format('truetype');
-}
+    h2 {
+        color: #3d5f08;
+    }
 
-@font-face {
-    font-family: 'Poppins-Medium-Text';
-    src: url('../../assets/fonts/Poppins\ Medium\ 500.ttf') format('truetype');
-}
+    .dli {
+        width: 80%;
+        margin-left: 15%;
+    }
 
-h1 {
-    font-family: 'Poppins-h-One';
-    font-size: 32px;
-}
+    .line {
+        border-left: 2px solid #3A6000;
+        height: 450px;
+        position: relative;
+        left: 15%;
+        margin-left: 3px;
+        top: 2%;
 
-h2 {
-    font-family: 'Poppins-h-One';
-    font-size: 28px;
-}
+    }
 
-h3 {
-    font-family: 'Poppins-h-One';
-    font-size: 24px;
-}
+    .paratext {
+        font-weight: bold;
+        font-family: roboto;
+        font-size: 13px;
+    }
 
-h4 {
-    font-family: 'Poppins-h-Two';
-    font-size: 16px;
-}
+    .left {
+        display: flex;
+        width: 50%;
 
-h5 {
-    font-family: 'Poppins-Reg-Text';
-    font-size: 14px;
-}
 
-// h6 {
-//     font-family: 'Poppins-Bold-Text';
-//     font-size: 16px;
-// }
+    }
 
-h6 {
-    font-family: 'Poppins-Medium-Text';
-    font-size: 16px;
-}
+    .right {
+        display: flex;
+        width: 50%;
 
-.faqs-container{
-    width: 90%;
-    height: auto;
-    padding: 100px 30px 30px 4em;
-    color: #3A6000;
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
-}
+    }
 
-//---------------------------------------------------------------------
-@media screen and (max-width: 720px) {
-    .faqs-container{
-        padding:100px 30px 30px 15px;
-    } 
-}
+    p {
+        text-align: center;
+        color: #516d2b;
+    }
+
+    .subleft {
+        width: 500px;
+        height: 300px;
+
+    }
+
+    .subright {
+        width: 500px;
+        height: 300px;
+
+    }
