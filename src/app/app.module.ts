@@ -46,6 +46,7 @@ import { SchoolAppComponent } from './components/school-app/school-app.component
 import { TeacherAccComponent } from './teacher-acc/teacher-acc.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { TeacherNavbarComponent } from './components/teacher-navbar/teacher-navbar.component';
+import { HelpAndSupportComponent } from './components/help-and-support/help-and-support.component';
 
 
 @NgModule({
@@ -85,6 +86,7 @@ import { TeacherNavbarComponent } from './components/teacher-navbar/teacher-navb
     TeacherAccComponent,
     ForgotpasswordComponent,
     TeacherNavbarComponent,
+    HelpAndSupportComponent,
   ],
   imports: [
 
