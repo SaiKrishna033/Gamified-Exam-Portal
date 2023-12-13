@@ -44,11 +44,11 @@ export class CreatQuizComponent {
   // };
 
   subjectMapping: valuePathMapping = {
+    MTH: ['Mathematics', '../../../assets/mathsimg.png'],
     PHY: ['Physics', '../../../assets/physicsimg.png'],
     CHM: ['Chemistry', '../../../assets/chemimg.png'],
     BIO: ['Biology', '../../../assets/bioimg.png'],
     SCE: ['Science', '../../../assets/scienceimg.png'],
-    MTH: ['Mathematics', '../../../assets/mathimg.png'],
     // TODO: what do with rest of the subjects that are not in design
   };
   subjectTypeMapping: Mapping = {
