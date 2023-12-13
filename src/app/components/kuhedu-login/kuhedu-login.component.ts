@@ -45,8 +45,8 @@ export class KuheduLoginComponent {
           this.http.get(this.khservice.baseUrl + 'user/details',{headers}).subscribe((res:any)=>{
               localStorage.setItem('id',this.security.encryptData(res.data.id));
               localStorage.setItem('email',this.security.encryptData(res.data.email));
-              localStorage.setItem('firstName',this.security.encryptData(res.data.firstName));
-              localStorage.setItem('lastName',this.security.encryptData(res.data.lastName));
+              localStorage.setItem('firstName',res.data.firstName);
+              localStorage.setItem('lastName',res.data.lastName);
               localStorage.setItem('userType', this.security.encryptData(res.data.userType));
               window.location.reload();
           });
