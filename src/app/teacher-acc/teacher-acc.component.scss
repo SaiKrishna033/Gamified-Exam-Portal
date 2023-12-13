@@ -1,12 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,200;1,400;1,500;1,600;1,700;1,800&display=swap");
 
+.sp{
+  width: 60%;
+  margin-left: 20%;
+  padding-top: 10%;
 
-
+}
+.hj{
+ background-color: #e6ffbd;
+  height: 100vh;
+}
 
 .profile_view {
   border-radius: 7.7px;
   border: 3.12px solid var(--Dark-Green, #3a6000);
-  background: #f2ffde;
+  background: #F2FFDE;
   box-shadow: 4.2px 4.2px 30.1px 0px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: center;
@@ -33,7 +41,7 @@
 }
 
 .child {
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -125,3 +133,46 @@ hr.vertical {
   width: 0;
   border: 1px solid black;
 }
+
+
+
+
+
+
+// starts
+
+  .star-rating {
+    display: inline-block;
+    font-size: 0; /* Remove whitespace between inline-block elements */
+  }
+  
+  .star-rating::before {
+    content: "\2605"; /* Unicode character for a solid star */
+    color: #3a6000;
+    font-size: 24px;
+  }
+  
+  .star-rating[data-rating="1"]::before {
+    content: "\2605";
+    color: #3a6000;
+  }
+  
+  .star-rating[data-rating="2"]::before {
+    content: "\2605\2605";
+    color: #3a6000;
+  }
+  
+  .star-rating[data-rating="3"]::before {
+    content: "\2605\2605\2605";
+    color: #3a6000;
+  }
+  
+  .star-rating[data-rating="4"]::before {
+    content: "\2605\2605\2605\2605";
+    color: #3a6000;
+  }
+  
+  .star-rating[data-rating="5"]::before {
+    content: "\2605\2605\2605\2605\2605";
+    color: #3a6000;
+  }

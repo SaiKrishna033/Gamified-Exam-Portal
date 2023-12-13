@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./teacher-navbar.component.scss']
 })
 export class TeacherNavbarComponent {
+localStorage: any;
+username:any=localStorage.getItem('firstName')
 
 }

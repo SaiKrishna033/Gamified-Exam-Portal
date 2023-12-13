@@ -50,7 +50,7 @@ const routes: Routes = [
   { path: 'magazine', component: MagazineComponent },
   { path: 'assessment', component: SchoolAppComponent },
   { path:"help-and-support", component: HelpAndSupportComponent},
-  { path: 'tea', component: TeacherAccComponent },
+  { path: 'teacher-acc', component: TeacherAccComponent },
   { path: 'for', component: ForgotpasswordComponent  },
   { path: 'report1', component: Report1Component},
 

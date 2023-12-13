@@ -32,19 +32,20 @@
                         </div>
                         <div class="profile_text">
                             <p class="profile_username">
-                                Anand Mahindra
+                               {{localStorage.getItem('firstName')}}
                             </p>
                             <p class="profile_usertag">
-                                @Saicharan
+                                {{username}}
+
                             </p>
                         </div>
                     </div>
                     <div class="bottom_section">
-                        <a href="">Profile</a>
+                        <a routerLink="/teacher-acc">Profile</a>
                         <hr>
                         <a href="">Reports</a>
                         <hr>
-                        <a href="">FAQ</a>
+                        <a routerLink="/help-and-support">FAQ</a>
                         <hr>
                         <a routerLink="/help-and-support" >Help/Support</a>
                         <hr>
@@ -72,3 +73,8 @@
         </div>
     </div>
 </div>
+<div class="star-rating" data-rating="3"></div>
+
+
+
+
