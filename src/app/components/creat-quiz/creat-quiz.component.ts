@@ -16,7 +16,7 @@ export class CreatQuizComponent {
 
   closemodal(){
     this.show=false;
-  }
+  }
 
 
 
@@ -61,6 +61,9 @@ uploadFile(): void {
     // Reset selectedFile after upload
     this.selectedFile = null;
   }
+
+
+  
 }
 
 
