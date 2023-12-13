@@ -20,25 +20,13 @@
     </div>
     <div class="pictures">
       <div class="subjects-filter-container">
-        <div class="subjects-card" id="mathematics">
-          <img src="../../../assets/mathsimg.png" />
-          <p>Mathematics</p>
-        </div>
-        <div class="subjects-card" id="physics">
-          <img src="../../../assets/physicsimg.png" />
-          <p>Physics</p>
-        </div>
-        <div class="subjects-card" id="chemistry">
-          <img src="../../../assets/chemimg.png" />
-          <p>Chemistry</p>
-        </div>
-        <div class="subjects-card" id="biology">
-          <img src="../../../assets/bioimg.png" />
-          <p>Biology</p>
-        </div>
-        <div class="subjects-card" id="science">
-          <img src="../../../assets/scienceimg.png" />
-          <p>Science</p>
+        <div
+          class="subjects-card"
+          *ngFor="let key of objectKeys(subjectMapping)"
+          id="{{ subjectMapping[key][0] | lowercase }}"
+        >
+          <img [src]="subjectMapping[key][1]" />
+          <p>{{ subjectMapping[key][0] }}</p>
         </div>
       </div>
     </div>
