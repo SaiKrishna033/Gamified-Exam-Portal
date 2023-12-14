@@ -47,7 +47,7 @@ const routes: Routes = [
   { path: 'student-profile', component: StudentProfileComponent },
   { path: 'teacher-dashboard', component: TeacherDashboardComponent, canActivate: [AuthGuard], data: { allowedUserTypes: ['teacher'] } },
   { path: 'create-quiz', component: CreatQuizComponent },
-  { path: 'detailedreport', component: DetailedreportComponent },
+  { path: 'detailedreport/:id', component: DetailedreportComponent },
   { path: 'kuhedulogo', component: KuhedunewlogoComponent },
   { path: 'magazine', component: MagazineComponent },
   { path: 'assessment', component: SchoolAppComponent },
