@@ -54,7 +54,7 @@ const routes: Routes = [
   { path:"help-and-support", component: HelpAndSupportComponent},
   { path: 'tea', component: TeacherAccComponent },
   { path: 'for', component: ForgotpasswordComponent  },
-  { path: 'report1', component: Report1Component},
+  { path: 'report/:id', component: Report1Component},
 
 
 ];
