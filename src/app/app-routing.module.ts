@@ -25,6 +25,8 @@ import { SchoolAppComponent } from './components/school-app/school-app.component
 import { TeacherAccComponent } from './teacher-acc/teacher-acc.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { HelpAndSupportComponent } from './components/help-and-support/help-and-support.component';
+
+import { AuthGuard } from './auth.gaurd';
 import { Report1Component } from './report1/report1.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -43,7 +45,7 @@ const routes: Routes = [
   { path: 'about-kuhedu-practice', component: AboutPracticeComponent },
   { path: 'teacher-profile', component: TeacherProfileComponent },
   { path: 'student-profile', component: StudentProfileComponent },
-  { path: 'teacher-dashboard', component: TeacherDashboardComponent },
+  { path: 'teacher-dashboard', component: TeacherDashboardComponent, canActivate: [AuthGuard], data: { allowedUserTypes: ['teacher'] } },
   { path: 'create-quiz', component: CreatQuizComponent },
   { path: 'detailedreport', component: DetailedreportComponent },
   { path: 'kuhedulogo', component: KuhedunewlogoComponent },
