@@ -1,57 +1,59 @@
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+</style>
 <div class="container">
-  <p style="margin-left: 60%;">Take a quick tour on how to create a paper</p>
+  <p style="padding-top: 93px; margin-left: 60%">
+    Take a quick tour on how to create a paper
+  </p>
   <div class="green-box">
-
-    <div style="display:flex;justify-content: center;width:100%;text-align:center;margin-bottom:-20px">
-
-      <h2 style="color: #006400;">Select a subject</h2>
-
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: -25px;
+        text-align: center;
+      "
+    >
+      <h2 style="color: #006400">Select Subject</h2>
     </div>
-
     <div class="pictures">
-
       <div class="subjects-filter-container">
-
-        <div class="subjects-card" id="physics">
-
-        </div>
-        <div class="subjects-card" id="chemistry">
-
-        </div>
-        <div class="subjects-card" id="biology">
-
-        </div>
-        <div class="subjects-card" id="mathematics">
-
+        <div
+          class="subjects-card"
+          *ngFor="let key of objectKeys(subjectMapping)"
+          id="{{ subjectMapping[key][0] | lowercase }}"
+        >
+          <img [src]="subjectMapping[key][1]" />
+          <p>{{ subjectMapping[key][0] }}</p>
         </div>
       </div>
     </div>
 
     <div class="secondcontent">
-
       <div class="first">
-
         <div class="group">
           <label for="">Enter Your Name</label>
-          <input type="text" class="form-field" placeholder="Enter Your Name">
+          <input class="input-name" type="text" placeholder="Enter Your Name" />
         </div>
 
         <div class="selectgroup">
-
           <label for="">Select Class</label>
 
           <div class="flex-container">
             <select id="teacher-type" name="teacher-type">
-              <option value="Easy">Class 1</option>
-              <option value="Medium">Clas 2</option>
-              <option value="Hard">Class 3</option>
+              <option
+                *ngFor="let key of objectKeys(classMapping)"
+                [value]="key"
+                >
+                {{classMapping[key]}}
+              </option>
             </select>
           </div>
-
         </div>
 
         <div class="selectgroup">
-
           <label for="">Chapter Name</label>
           <div class="flex-container">
             <select id="teacher-type" name="teacher-type">
@@ -60,37 +62,45 @@
               <option value="Hard">Chapter 3</option>
             </select>
           </div>
-
         </div>
+
+        <!--
+          TODO: Chapter Name requires more thinking
+                - API for chapters?
+                - Hardcode chapters?
+        -->
 
         <div class="selectgroup">
           <label for="">Difficulty Level</label>
           <div class="flex-container">
             <select id="teacher-type" name="teacher-type">
-              <option value="Easy">Easy</option>
-              <option value="Medium">Medium</option>
-              <option value="Hard">Hard</option>
+              <option
+                *ngFor="let key of objectKeys(difficultyLevelMapping)"
+                [value]="key"
+              >
+                {{difficultyLevelMapping[key]}}
+              </option>
             </select>
           </div>
         </div>
-
       </div>
 
-
       <div class="second">
-
         <div class="group">
           <label for="">Select Board</label>
-          <input type="text" style="width: ;" class="form-field" placeholder="Enter Your Name">
+          <input type="text" class="input-name" placeholder="Enter Your Name" />
         </div>
 
         <div class="group">
           <label for="">Question Type</label>
           <div class="flex-container">
             <select id="teacher-type" name="teacher-type">
-              <option value="Easy">Class 1</option>
-              <option value="Medium">Clas 2</option>
-              <option value="Hard">Class 3</option>
+              <option
+                *ngFor="let key of objectKeys(questionTypeMapping)"
+                [value]="key"
+              >
+                {{questionTypeMapping[key]}}
+              </option>
             </select>
           </div>
         </div>
@@ -98,48 +108,90 @@
         <div class="group">
           <label for="">Number of Questions</label>
           <div class="flex-container">
-            <select id="teacher-type" name="teacher-type">
-              <option value="Easy">Chapter 1</option>
-              <option value="Medium">Chapter 2</option>
-              <option value="Hard">Chapter 3</option>
-            </select>
+           <input class="input-name" type="text" placeholder="Set number of questions" />
           </div>
         </div>
 
-        <div class="selectgroup">
+        <div class="group">
           <label for="">Set Duration</label>
           <div class="flex-container">
-            <select id="teacher-type" name="teacher-type">
-              <option value="Easy">Easy</option>
-              <option value="Medium">Medium</option>
-              <option value="Hard">Hard</option>
-            </select>
+            <input class="input-name" type="text" placeholder="Set Duration (1-120) in Minutes" />
           </div>
         </div>
-
       </div>
-
     </div>
 
     <div class="thirdcontent">
       <button class="bluebutton">Generate Code</button>
     </div>
-
   </div>
 
   <div class="green-box">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <h2 style="padding-left: 50px;font-size:medium;">Or Import question paper</h2>
-      <button class="bluebutton" style="margin-right: 90px;">Spreadsheet</button>
+    <div
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
+      <h2 style="padding-left: 50px; font-family: 'Poppins'; font-size: medium">
+        Or Import question paper
+      </h2>
+      <button (click)="openModal()" class="bluebutton" style="margin-right: 90px">Spreadsheet</button>
     </div>
 
     <div class="button-container">
       <button class="bluebutton">Preview</button>
       <button class="bluebutton">Publish</button>
     </div>
-
   </div>
 
-  <button class="bluebutton" style="height: 50px;width: 300px;font-size: medium;">Start Creating</button>
+  <button
+    class="bluebutton"
+    style="height: 50px; width: 300px; font-size: medium"
+  >
+    Start Creating
+  </button>
+</div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="overlay" *ngIf="show">
+  <div class="content" >
+    <h2 class="modal-heading">Import an Excel sheet</h2>
+    <div style="display: flex;">
+      <div class="excel-image">
+        <img src="../assets/excel.png" alt="Excel Image" class="card-image" style="width:85%;margin-left: 12px;">
+      </div>
+    <p class="modal-text">Download Sample sheet</p>
+    </div>
+
+    <div class="modal-box">
+      <div
+      class="drop-zone"
+      (drop)="onDrop($event)"
+      (dragover)="onDragOver($event)"
+      (dragleave)="onDragLeave($event)"
+    >
+      <p>Drag and drop a file here or click to select</p>
+    </div>
+
+    <div *ngIf="selectedFile">
+      <p>Selected File: {{ selectedFile.name }}</p>
+    </div>
+    </div>
+
+    <div class="modal-buttons">
+
+      <button mat-raised-button>Upload</button>
+      <button mat-raised-button (click)="uploadFile()" >Cancel</button>
+    </div>
+  </div>
 </div>

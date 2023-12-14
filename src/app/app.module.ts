@@ -1,13 +1,16 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule  } from 'ngx-google-analytics';
+import {
+  NgxGoogleAnalyticsModule,
+  NgxGoogleAnalyticsRouterModule,
+} from 'ngx-google-analytics';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { MenubarComponent } from './components/menubar/menubar.component';
@@ -33,7 +36,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { AboutPracticeComponent } from './components/about-practice/about-practice.component';
 import { DatePipe } from '@angular/common';
-import {NgToastModule} from 'ng-angular-popup';
+import { NgToastModule } from 'ng-angular-popup';
 import { KuheduLoginComponent } from './components/kuhedu-login/kuhedu-login.component';
 import { KuhedSignupComponent } from './components/kuhed-signup/kuhed-signup.component';
 import { TeacherProfileComponent } from './components/teacher-profile/teacher-profile.component';
@@ -47,11 +50,10 @@ import { TeacherAccComponent } from './teacher-acc/teacher-acc.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { TeacherNavbarComponent } from './components/teacher-navbar/teacher-navbar.component';
 import { HelpAndSupportComponent } from './components/help-and-support/help-and-support.component';
-
+import { PracticeSetViewerComponent } from './components/practice-set-viewer/practice-set-viewer.component';
 
 @NgModule({
   declarations: [
-
     AppComponent,
     TopbarComponent,
     MenubarComponent,
@@ -87,9 +89,9 @@ import { HelpAndSupportComponent } from './components/help-and-support/help-and-
     ForgotpasswordComponent,
     TeacherNavbarComponent,
     HelpAndSupportComponent,
+    PracticeSetViewerComponent,
   ],
   imports: [
-
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

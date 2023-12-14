@@ -22,25 +22,36 @@ export class ForgotpasswordComponent {
   ) { console.log("LOG: Forgot pass init") }
   
   // POST OTP
-  userEmail: string = '';
+  userEmail: string = '';   //initially set to an empty string
   sendotp() {
-    this.clickedSendOtp = true;
-    this.intial = false;
+    //check emial id 
+    if(this.userEmail==''){
+      this.toast.warning({
+        detail: 'warning',
+        summary: 'Enter your email address',
+        duration: 3000,
+        position: 'topRight',
+      });
+      return
+    }
+
+
+
 
     const ENDPOINT ="user/request-reset-password"
-    const body = {
-      email: this.userEmail
-    }
+    const body = {email: this.userEmail}
 
     this.http.post(this.khservice.baseUrl + ENDPOINT, body).subscribe(
       (res: any) => {
         if (res.status === 200) {
           this.clickedSendOtp = true;
+          this.intial = false;
           this.toast.success({
             detail: 'SUCCESS',
             summary: 'Successfully Requested OTP',
             duration: 3000,
             position: 'topRight',
+
           });
         }
       }, (error) => {

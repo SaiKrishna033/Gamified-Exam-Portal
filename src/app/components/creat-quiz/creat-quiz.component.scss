@@ -1,260 +1,13 @@
-// .container{
-//   width: 100%;
-//   padding-top: 80px;
-//   height: auto;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   background-color: white;
-//   font-family: Arial, Helvetica, sans-serif;
-//   flex-direction: column;
-// }
-
-// .button-container{
-//   display: flex;
-//   justify-content: flex-end;
-// }
-
-
-// .title{
-//   display: flex;
-//   justify-content: center;
-// }
-// .green-box{
-//   display: flex;
-//   border: 2px solid green;
-//   flex-direction: column;
-//   width: 100%;
-//   margin: 5px;
-// }
-
-// #physics {
-//   background: url('../../../assets/physicsimg.png');
-//   background-color: #ffbe00;
-//   background-repeat: no-repeat;
-//   background-size: 50%;
-//   background-position-x: center;
-//   background-position-y: 15px;
-// }
-
-// #chemistry {
-//   background: url('../../../assets/chemimg.png');
-//   background-color: #ff6d55;
-//   background-repeat: no-repeat;
-//   background-size: 50%;
-//   background-position-x: center;
-//   background-position-y: 15px;
-// }
-
-// #biology {
-//   background: url('../../../assets/bioimg.png');
-//   background-color: #83e21f;
-//   background-repeat: no-repeat;
-//   background-size: 50%;
-//   background-position-x: center;
-//   background-position-y: 15px;
-// }
-
-// #mathematics {
-//   background: url('../../../assets/mathsimg.png');
-//   background-color: #a8badb;
-//   background-repeat: no-repeat;
-//   background-size: 50%;
-//   background-position-x: center;
-//   background-position-y: 15px;
-// }
-
-// .physics {
-//   background: url('../../../assets/physicsimg.png');
-//   background-color: #ffbe00;
-//   background-repeat: no-repeat;
-//   background-size: 30%;
-//   background-position-x: center;
-//   background-position-y: 15px;
-// }
-
-// .chemistry {
-//   background: url('../../../assets/chemimg.png');
-//   background-color: #ff6d55;
-//   background-repeat: no-repeat;
-//   background-size: 30%;
-//   background-position-x: center;
-//   background-position-y: 15px;
-// }
-
-// .biology {
-//   background: url('../../../assets/bioimg.png');
-//   background-color: #83e21f;
-//   background-repeat: no-repeat;
-//   background-size: 30%;
-//   background-position-x: center;
-//   background-position-y: 15px;
-// }
-
-// .mathematics {
-//   background: url('../../../assets/mathsimg.png');
-//   background-color: #a8badb;
-//   background-repeat: no-repeat;
-//   background-size: 30%;
-//   background-position-x: center;
-//   background-position-y: 15px;
-// }
-
-// .subjects-filter-container {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 15px;
-//   flex-wrap: wrap;
-//   margin-top: 10px;
-//   margin-bottom: 25px;
-//   width: 100%;
-//   height: auto;
-//   scroll-behavior: smooth;
-// }
-
-// .subjects-card {
-//   width: 50px;
-//   height: 50px;
-//   margin-top: 10px;
-//   border: 1px solid grey;
-//   border-radius: 10px;
-//   cursor: pointer;
-// }
-
-// .pictures{
-//   display: flex;
-
-// }
-
-// .secondcontent{
-//   display: flex;
-//   justify-content: center;
-//   gap: 1;
-// }
-
-// .first{
-//   display: flex;
-//   flex-direction: column;
-//   width: 100%;
-//   margin: 10px;
-// }
-
-// .second{
-//   display: flex;
-//   flex-direction: column;
-//   width: 100%;
-//   margin: 10px;
-// }
-
-// #teacher-type{
-//   display: flex;
-//   width: 100%;
-// }
-
-// .form-column {
-//   display: flex;
-//   flex-direction: column;
-//   width: 48%;
-//   margin-bottom: 20px;
-// }
-
-// .form-field {
-//   border: 3px solid #006400;
-//   margin-bottom: 10px;
-//   padding: 8px;
-//   border-radius: 8px;
-//   width: 45%;
-// }
-
-// .additional-text {
-//   font-weight: bold;
-//   color: #006400;
-//   margin-top: 10px;
-// }
-
-// .half-width-buttons {
-//   display: flex;
-//   justify-content: space-between;
-//   margin-top: 10px;
-//   margin: 5%;
-//   padding: 5px;
-// }
-
-// .half-width-buttons button {
-//   flex: 1;
-//   margin-right: 5px;
-//   padding: 8px;
-// }
-
-// .school-button,
-// .private-button,
-// .blue-button {
-//   cursor: pointer;
-//   color: #3498db;
-//   font-weight: bold;
-//   border-radius: 8px;
-//   border: 2px solid grey;
-//   box-shadow: 2px 2px 5px 2px #888888;
-// }
-
-
-// .group{
-//   display: flex;
-//   justify-content: space-between;
-// }
-
-// .selectgroup {
-//   display: flex;
-//   align-items: center;
-// }
-
-// label {
-//   margin-right: 10px;
-//   width: 50%;
-//   /* Adjust as needed */
-// }
-
-// .flex-container {
-//   flex: 1;
-//   display: flex;
-//   width: 100%;
-//   justify-content: flex-end;
-// }
-
-// select {
-//   width: 100%;
-//   border: 3px solid #006400;
-//     margin-bottom: 10px;
-//     padding: 8px;
-//     border-radius: 8px;
-//   /* Ensures the select takes up the remaining space */
-// }
-
-// .thirdcontent{
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-
-// .bluebutton{
-//   padding: 10px;
-//   background-color: rgb(17, 17, 177);
-//   border-radius: 2px;
-//   color: white;
-//   margin: 10px;
-// }
-
+* {
+  font-family: "Poppins";
+}
 .container {
   width: 100%;
-  padding-top: 80px;
   height: auto;
   display: flex;
-  justify-content: center;
+
   align-items: center;
-  background-color: #E6FFBD;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e6ffbd;
   flex-direction: column;
 }
 
@@ -263,9 +16,6 @@
   justify-content: flex-end;
   margin-right: 80px;
 }
-
-
-
 
 .title {
   display: flex;
@@ -276,94 +26,53 @@
   display: flex;
   border: 4px solid green;
   flex-direction: column;
-  width: 100%;
+  min-width: 1172px;
   margin: 5px;
   border-radius: 10px;
   color: #006400;
   background-color: #f1ffde;
-
 }
-
-#physics {
-  background: url('../../../assets/physicsimg.png');
-  background-color: #ffbe00;
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position-x: center;
-  background-position-y: 15px;
-  border: 3px solid green;
-  margin-right: 30px;
-
+.subjects-card {
+  display: flex;
+  // justify-content: center;
+  flex-direction: column;
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+  border: 3px solid rgba(58, 96, 0, 1);
+  border-radius: 2.1px;
+  cursor: pointer;
+  align-items: center;
+  img {
+    padding-top: 9.3px;
+    align-self: center;
+    height: 24.3px;
+    width: 24.3px;
+  }
+  p {
+    font-size: 6.6px;
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+  }
 }
-
-#chemistry {
-  background: url('../../../assets/chemimg.png');
-  background-color: #ff6d55;
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position-x: center;
-  background-position-y: 15px;
-  border: 3px solid green;
-  margin-right: 30px;
-}
-
-#biology {
-  background: url('../../../assets/bioimg.png');
-  background-color: #83e21f;
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position-x: center;
-  background-position-y: 15px;
-  border: 3px solid green;
-  margin-right: 30px;
-}
-
 #mathematics {
-  background: url('../../../assets/mathsimg.png');
-  background-color: #a8badb;
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position-x: center;
-  background-position-y: 15px;
-  border: 3px solid green;
+  background-image: radial-gradient(rgba(0, 162, 255, 1), rgba(0, 105, 165, 1));
 }
-
-.physics {
-  background: url('../../../assets/physicsimg.png');
-  background-color: #ffbe00;
-  background-repeat: no-repeat;
-  background-size: 30%;
-  background-position-x: center;
-  background-position-y: 15px;
+#physics {
+  background-image: radial-gradient(rgba(255, 215, 0, 1), rgba(221, 186, 0, 1));
 }
-
-.chemistry {
-  background: url('../../../assets/chemimg.png');
-  background-color: #ff6d55;
-  background-repeat: no-repeat;
-  background-size: 30%;
-  background-position-x: center;
-  background-position-y: 15px;
+#chemistry {
+  background-image: radial-gradient(rgba(157, 255, 0, 1), rgba(109, 176, 0, 1));
 }
-
-.biology {
-  background: url('../../../assets/bioimg.png');
-  background-color: #83e21f;
-  background-repeat: no-repeat;
-  background-size: 30%;
-  background-position-x: center;
-  background-position-y: 15px;
+#biology {
+  background-image: radial-gradient(rgba(255, 103, 0, 1), rgba(204, 82, 0, 1));
 }
-
-.mathematics {
-  background: url('../../../assets/mathsimg.png');
-  background-color: #a8badb;
-  background-repeat: no-repeat;
-  background-size: 30%;
-  background-position-x: center;
-  background-position-y: 15px;
+#science {
+  background-image: radial-gradient(
+    rgba(255, 192, 203, 1),
+    rgba(221, 70, 106, 1)
+  );
 }
-
 .subjects-filter-container {
   display: flex;
   justify-content: center;
@@ -377,21 +86,12 @@
   scroll-behavior: smooth;
 }
 
-.subjects-card {
-  width: 50px;
-  height: 50px;
-  margin-top: 10px;
-  border: 1px solid grey;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
 .pictures {
   display: flex;
-
-
 }
-
+.input-name {
+  width: 223px;
+}
 .secondcontent {
   display: flex;
   justify-content: center;
@@ -401,7 +101,7 @@
 .first {
   display: flex;
   flex-direction: column;
-  width: 120%;
+  width: 100%;
   margin-right: 15%;
   margin-left: 40px;
 }
@@ -418,36 +118,25 @@ p {
   margin-right: 10%;
 }
 
-#teacher-type {
-  display: flex;
-  width: 100%;
-}
+// #teacher-type {
+//   display: flex;
+//   width: 243px;
+// }
 
 .form-column {
   display: flex;
   flex-direction: column;
   width: 48%;
-  margin-bottom: 20px;
-}
-
-.form-field {
-  border: 3px solid #006400;
-  margin-bottom: 10px;
-  padding: 8px;
-  border-radius: 8px;
-  width: 45%;
 }
 
 .additional-text {
   font-weight: bold;
   color: #006400;
-  margin-top: 10px;
 }
 
 .half-width-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
   margin: 5%;
   padding: 5px;
 }
@@ -467,24 +156,28 @@ p {
   border-radius: 8px;
   border: 2px solid grey;
   box-shadow: 2px 2px 5px 2px #888888;
-
 }
-
 
 .group {
   display: flex;
   justify-content: space-between;
 }
+input {
+  border: 3px solid #006400;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  width: 243px;
+}
 
 .selectgroup {
   display: flex;
   align-items: center;
-
 }
 
 label {
   margin: 10px;
-  width: 50%;
+  width: auto;
   /* Adjust as needed */
   font-weight: bold;
   color: #006400;
@@ -499,13 +192,12 @@ label {
 }
 
 select {
-  width: 100%;
+  width: 243px;
+  background-color: #fff;
   border: 3px solid #006400;
   margin-bottom: 10px;
   padding: 8px;
   border-radius: 8px;
-
-
   /* Ensures the select takes up the remaining space */
 }
 
@@ -515,7 +207,6 @@ select {
   align-items: center;
 }
 
-
 .bluebutton {
   padding: 10px;
   background-color: #003a63;
@@ -524,4 +215,149 @@ select {
   margin: 10px;
   font-weight: bold;
   width: 180px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  background-color: #e6ffbd;
+  width: 758px;
+  height: 355px;
+  padding: 20px;
+  top: 183px;
+  left: 304px;
+  border-radius: 7.7px;
+  border-color: #3a6000;
+  border: 3.12px;
+}
+
+.modal-heading {
+  color: #3a6000;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.modal-text {
+  color: #3a6000;
+  font-size: large;
+  font-weight: 600;
+  margin-left: 8px;
+  margin-top: 12px;
+}
+
+.modal-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #3a6000;
+  border: 3.12px solid #3a6000;
+  width: 735px;
+  height: 123px;
+  padding: 30px 0 5px 0px;
+  border-radius: 7.7px;
+  margin-left: 8px;
+}
+
+.excel-image {
+  width: 54px;
+  height: 54px;
+  top: 238px;
+  left: 339px;
+}
+
+.modal-box-text {
+  border-color: #3a6000;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 750;
+  margin-top: 30px;
+  color: #3a6000;
+}
+
+.modal-box-text-system {
+  text-align: center;
+  color: #3a6000;
+  font-size: 12px;
+  margin-top: 1px;
+  font-weight: 500;
+}
+
+.card-upload-image {
+  display: flex;
+  align-items: center;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button[mat-raised-button] {
+  background-color: #005695;
+  padding: 10px 44px 10px 44px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* app.component.css */
+
+.drop-zone {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.drop-zone p {
+  margin: 0;
+}
+
+.drop-zone:hover {
+  border-color: #005695;
 }

@@ -27,7 +27,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { HelpAndSupportComponent } from './components/help-and-support/help-and-support.component';
 
 import { AuthGuard } from './auth.gaurd';
-
+import { Report1Component } from './report1/report1.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -54,6 +54,8 @@ const routes: Routes = [
   { path:"help-and-support", component: HelpAndSupportComponent},
   { path: 'tea', component: TeacherAccComponent },
   { path: 'for', component: ForgotpasswordComponent  },
+  { path: 'report1', component: Report1Component},
+
 
 ];
 
