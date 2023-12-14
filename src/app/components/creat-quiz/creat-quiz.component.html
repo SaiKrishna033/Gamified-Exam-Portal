@@ -25,7 +25,9 @@
           *ngFor="let key of objectKeys(subjectMapping)"
           id="{{ subjectMapping[key][0] | lowercase }}"
         >
-          <img [src]="subjectMapping[key][1]" />
+          <img [src]="subjectMapping[key][1]"
+            (click)="handleSubject(key)" [style.opacity]="selectedSubject === key ? 1 : 0.2"
+          />
           <p>{{ subjectMapping[key][0] }}</p>
         </div>
       </div>
@@ -56,11 +58,7 @@
         <div class="selectgroup">
           <label for="">Chapter Name</label>
           <div class="flex-container">
-            <select id="teacher-type" name="teacher-type">
-              <option value="Easy">Chapter 1</option>
-              <option value="Medium">Chapter 2</option>
-              <option value="Hard">Chapter 3</option>
-            </select>
+            <input type="text" class="input-name" placeholder="Enter Chapter name" />
           </div>
         </div>
 
@@ -151,18 +149,6 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="overlay" *ngIf="show">
   <div class="content" >
     <h2 class="modal-heading">Import an Excel sheet</h2>
@@ -190,8 +176,8 @@
 
     <div class="modal-buttons">
 
-      <button mat-raised-button>Upload</button>
-      <button mat-raised-button (click)="uploadFile()" >Cancel</button>
+      <button mat-raised-button (click)="uploadFile()" >Upload</button>
+      <button mat-raised-button (click)="closemodal()">Cancel</button>
     </div>
   </div>
 </div>

@@ -19,7 +19,7 @@ export class KuhuInstructionsComponent {
   questions: any;
   kuhu_state: any = [];
   _kuhustate: KuhuItemStateObj = {};
-  // totalTimeInSeconds: number = 0;
+  // totalTimeInSeconds: number = 0;ke
   // timeRemaining = 0;
   totalTimeInSeconds_item: number = 0;
   timeRemaining_item = 0;

@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { KuheduServiceService } from 'src/app/kuhedu-service.service';
+import { UserService } from '../../user.service';
+import { EncryptionService } from '../../shared/services/encryption.service';
+
 
 interface Mapping {
   [key: string]: string;
@@ -14,6 +20,14 @@ interface valuePathMapping {
   styleUrls: ['./creat-quiz.component.scss'],
 })
 export class CreatQuizComponent {
+  constructor(
+    private kuheduService: KuheduServiceService,
+    private keySvc: EncryptionService,
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private router: Router,
+    private userService: UserService
+  ) {}
   show: boolean = false;
 
   objectKeys: (o: object) => string[] = Object.keys;
@@ -101,6 +115,13 @@ export class CreatQuizComponent {
     '7': 'Class 7',
   };
 
+  selectedSubject: string | null = null;
+
+  handleSubject(subjectKey: string): void {
+    console.log('Selected subject:', subjectKey);
+    this.selectedSubject = subjectKey;
+  }
+
   openModal(): void {
     this.show = true;
   }
@@ -138,10 +159,30 @@ export class CreatQuizComponent {
   }
 
   uploadFile(): void {
+    const uploadEndpoint = 'question/upload-question-using-csv-teacher';
+    const formData = new FormData();
+
+    const headers = new HttpHeaders({
+      Authorization: 'Bearer ' + this.keySvc.decryptData(this.userService.getAccessToken() || ''),
+    })
+
     if (this.selectedFile) {
       // Implement your file upload logic here
       console.log('Uploading file:', this.selectedFile);
-      // Reset selectedFile after upload
+      formData.append('question_csv', this.selectedFile);
+
+      // Upload
+      this.http
+        .post(this.kuheduService.baseUrl + uploadEndpoint, formData, { headers })
+        .subscribe((res: any) => {
+          if (res.status === 200) {
+            console.log('Upload response:', res);
+            if (res.status === 200) {
+              this.closemodal()
+            }
+          }
+        });
+
       this.selectedFile = null;
     }
   }
