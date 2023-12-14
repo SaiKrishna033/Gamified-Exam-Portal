@@ -27,16 +27,15 @@
                 <div class="profile_box">
                     <div class="top_section">
                         <div class="profile_pic">
-                            <img src="https://i.pinimg.com/550x/a8/47/9a/a8479a922b151b03df56a6db105dc5dd.jpg"
+                            <img src="../../../assets/default_profile.png"
                                 alt="profile pic">
                         </div>
                         <div class="profile_text">
                             <p class="profile_username">
-                               {{localStorage.getItem('firstName')}}
+                                {{username}}
                             </p>
                             <p class="profile_usertag">
                                 {{username}}
-
                             </p>
                         </div>
                     </div>
@@ -45,7 +44,7 @@
                         <hr>
                         <a href="">Reports</a>
                         <hr>
-                        <a routerLink="">FAQ</a>
+                        <a routerLink="/help-and-support">FAQ</a>
                         <hr>
                         <a routerLink="" >Help/Support</a>
                         <hr>

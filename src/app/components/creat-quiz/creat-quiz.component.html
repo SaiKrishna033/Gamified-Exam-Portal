@@ -19,25 +19,15 @@
     </div>
     <div class="pictures">
       <div class="subjects-filter-container">
-        <div class="subjects-card" id="mathematics">
-          <img src="../../../assets/mathsimg.png" />
-          <p>Mathematics</p>
-        </div>
-        <div class="subjects-card" id="physics">
-          <img src="../../../assets/physicsimg.png" />
-          <p>Physics</p>
-        </div>
-        <div class="subjects-card" id="chemistry">
-          <img src="../../../assets/chemimg.png" />
-          <p>Chemistry</p>
-        </div>
-        <div class="subjects-card" id="biology">
-          <img src="../../../assets/bioimg.png" />
-          <p>Biology</p>
-        </div>
-        <div class="subjects-card" id="science">
-          <img src="../../../assets/scienceimg.png" />
-          <p>Science</p>
+        <div
+          class="subjects-card"
+          *ngFor="let key of objectKeys(subjectMapping)"
+          id="{{ subjectMapping[key][0] | lowercase }}"
+        >
+          <img [src]="subjectMapping[key][1]"
+            (click)="handleSubject(key)" [style.opacity]="selectedSubject === key ? 1 : 0.2"
+          />
+          <p>{{ subjectMapping[key][0] }}</p>
         </div>
       </div>
     </div>
@@ -54,9 +44,12 @@
 
           <div class="flex-container">
             <select id="teacher-type" name="teacher-type">
-              <option value="Easy">Class 1</option>
-              <option value="Medium">Class 2</option>
-              <option value="Hard">Class 3</option>
+              <option
+                *ngFor="let key of objectKeys(classMapping)"
+                [value]="key"
+                >
+                {{classMapping[key]}}
+              </option>
             </select>
           </div>
         </div>
@@ -64,21 +57,26 @@
         <div class="selectgroup">
           <label for="">Chapter Name</label>
           <div class="flex-container">
-            <select id="teacher-type" name="teacher-type">
-              <option value="Easy">Chapter 1</option>
-              <option value="Medium">Chapter 2</option>
-              <option value="Hard">Chapter 3</option>
-            </select>
+            <input type="text" class="input-name" placeholder="Enter Chapter name" />
           </div>
         </div>
+
+        <!--
+          TODO: Chapter Name requires more thinking
+                - API for chapters?
+                - Hardcode chapters?
+        -->
 
         <div class="selectgroup">
           <label for="">Difficulty Level</label>
           <div class="flex-container">
             <select id="teacher-type" name="teacher-type">
-              <option value="Easy">Easy</option>
-              <option value="Medium">Medium</option>
-              <option value="Hard">Hard</option>
+              <option
+                *ngFor="let key of objectKeys(difficultyLevelMapping)"
+                [value]="key"
+              >
+                {{difficultyLevelMapping[key]}}
+              </option>
             </select>
           </div>
         </div>
@@ -94,9 +92,12 @@
           <label for="">Question Type</label>
           <div class="flex-container">
             <select id="teacher-type" name="teacher-type">
-              <option value="Easy">Class 1</option>
-              <option value="Medium">Class 2</option>
-              <option value="Hard">Class 3</option>
+              <option
+                *ngFor="let key of objectKeys(questionTypeMapping)"
+                [value]="key"
+              >
+                {{questionTypeMapping[key]}}
+              </option>
             </select>
           </div>
         </div>
@@ -104,22 +105,14 @@
         <div class="group">
           <label for="">Number of Questions</label>
           <div class="flex-container">
-            <select id="teacher-type" name="teacher-type">
-              <option value="Easy">Chapter 1</option>
-              <option value="Medium">Chapter 2</option>
-              <option value="Hard">Chapter 3</option>
-            </select>
+           <input class="input-name" type="text" placeholder="Set number of questions" />
           </div>
         </div>
 
-        <div class="selectgroup">
+        <div class="group">
           <label for="">Set Duration</label>
           <div class="flex-container">
-            <select id="teacher-type" name="teacher-type">
-              <option value="Easy">Easy</option>
-              <option value="Medium">Medium</option>
-              <option value="Hard">Hard</option>
-            </select>
+            <input class="input-name" type="text" placeholder="Set Duration (1-120) in Minutes" />
           </div>
         </div>
       </div>
@@ -155,18 +148,6 @@
 </div>
 
 
-
-
-
-
-
-
-    
-
-
-
-
-
 <div class="overlay" *ngIf="show">
   <div class="content" >
     <div style="display: flex;justify-content: space-between;">
@@ -191,16 +172,22 @@
     >
       <p>Drag and drop a file here or click to select</p>
     </div>
-    
+
     <div *ngIf="selectedFile">
       <p>Selected File: {{ selectedFile.name }}</p>
     </div>
     </div>
 
     <div class="modal-buttons">
+<<<<<<< 576a45394c5b5642b697da10bbbc9bbce1c67644
       
       <button mat-raised-button>Upload</button>
       <button mat-raised-button (click)="uploadFile()" (click)="closemodal()">Cancel</button>
+=======
+
+      <button mat-raised-button (click)="uploadFile()" >Upload</button>
+      <button mat-raised-button (click)="closemodal()">Cancel</button>
+>>>>>>> 044522dc9d76cabece96ed32ba8bba67da22e9fc
     </div>
   </div>
-</div>
+</div>
