@@ -143,6 +143,10 @@ export class PracticeSetViewerComponent {
     this.getPracticeSetsPerPage();
   }
 
+  handleSeeReport(reportId: string) {
+    this.router.navigate(['/report', reportId]);
+  }
+
   redirect(data: any) {
     this.router.navigate(['/quiz', data]);
   }

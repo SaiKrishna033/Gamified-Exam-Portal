@@ -105,8 +105,10 @@
   margin-top: 10px;
   border: 1px solid grey;
   border-radius: 10px;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(80, 77, 77, 0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(80, 77, 77, 0.75);
+  -webkit-box-shadow: 7.832px 9.399px 23.497px 0px rgba(0, 0, 0, 0.50);
+  ;
+  -moz-box-shadow: 7.832px 9.399px 23.497px 0px rgba(0, 0, 0, 0.50);
+  ;
   // box-shadow: 10px 10px 5px 0px  rgba(80, 77, 77, 0.75);
   cursor: pointer;
 }
@@ -126,8 +128,8 @@
   margin-top: -100px;
   border: 1px solid grey;
   border-radius: 10px;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(80, 77, 77, 0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(80, 77, 77, 0.75);
+  -webkit-box-shadow: 7.832px 9.399px 23.497px 0px rgba(0, 0, 0, 0.50);
+  -moz-box-shadow: 7.832px 9.399px 23.497px 0px rgba(0, 0, 0, 0.50);
   // box-shadow: 10px 10px 5px 0px  rgba(80, 77, 77, 0.75);
   cursor: pointer;
 }
@@ -251,6 +253,28 @@
   background-position-y: 15px;
 }
 
+.buttonofcard {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.blue-button2 {
+  border-radius: 10px;
+  //background-color:  #FFC300;
+  background-image: linear-gradient(#0080FE, #0047AB);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+
+  cursor: pointer;
+  margin-top: 1px;
+  margin-left: 4.55%;
+
+  bottom: 10px;
+  left: 50%;
+
+}
 
 /*------------------------------------------------------------------------------------*/
 
