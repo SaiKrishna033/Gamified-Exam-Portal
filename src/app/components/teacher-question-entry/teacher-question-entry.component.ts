@@ -48,6 +48,7 @@ export class TeacherQuestionEntryComponent {
   ls_class = localStorage.getItem('class');
   ls_question_type = localStorage.getItem('question_type');
   ls_total_duration_in_minutes = localStorage.getItem('total_t');
+    // TODO: Ask backed weather this for total time or per question time
   ls_state_code = localStorage.getItem('state_code');
   ls_language_code = localStorage.getItem('language_code');
   ls_subject_type = localStorage.getItem('subject_type');
@@ -96,6 +97,10 @@ export class TeacherQuestionEntryComponent {
       this.current_question_count_v = this.current_question_count - 1;
       this.next_question_count = this.current_question_count + 1;
     }
+
+    if (this.current_question_count == this.number_of_questions) {
+      this.resetLocalStorage();
+    }
   }
 
   submitQuestion() {
@@ -137,7 +142,7 @@ export class TeacherQuestionEntryComponent {
           if (res.status == 200) {
             console.log('Question uploaded successfully');
             this.resetQuestionVars();
-            this.handleNextButton();
+            // this.handleNextButton(); // TODO: would it be button or automatic?
           }
         },
         (err: any) => {
