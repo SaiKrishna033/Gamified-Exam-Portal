@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: 'disclaimer', component: DisclaimerComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'terms-conditions', component: TermsConditionsComponent },
-  { path: 'kuhu-pin', component: AskKuhuPinComponent },
+  { path: 'kuhu-pin', component: AskKuhuPinComponent }, // EVERYONE
   { path: 'quiz/:pin', component: KuhuInstructionsComponent },
   { path: 'kuhu-quiz-screen/:pin', component: KuhuComponent },
   { path: 'kuhu-quiz-dashboard', component: KuhuQuizDashboardComponent },
@@ -43,20 +43,38 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
   { path: 'about-kuhedu-assessment', component: AboutAssessmentComponent },
   { path: 'about-kuhedu-practice', component: AboutPracticeComponent },
-  { path: 'teacher-profile', component: TeacherProfileComponent },
+  {
+    path: 'teacher-profile',
+    component: TeacherProfileComponent,
+    canActivate: [AuthGuard],
+    data: { allowedUserTypes: ['teacher'] },
+  },
   { path: 'student-profile', component: StudentProfileComponent },
-  { path: 'teacher-dashboard', component: TeacherDashboardComponent, canActivate: [AuthGuard], data: { allowedUserTypes: ['teacher'] } },
-  { path: 'create-quiz', component: CreatQuizComponent },
+  {
+    path: 'teacher-dashboard',
+    component: TeacherDashboardComponent,
+    canActivate: [AuthGuard],
+    data: { allowedUserTypes: ['teacher'] },
+  },
+  {
+    path: 'create-quiz',
+    component: CreatQuizComponent,
+    canActivate: [AuthGuard],
+    data: { allowedUserTypes: ['teacher'] },
+  },
   { path: 'detailedreport/:id', component: DetailedreportComponent },
   { path: 'kuhedulogo', component: KuhedunewlogoComponent },
   { path: 'magazine', component: MagazineComponent },
   { path: 'assessment', component: SchoolAppComponent },
-  { path:"help-and-support", component: HelpAndSupportComponent},
-  { path: 'tea', component: TeacherAccComponent },
-  { path: 'for', component: ForgotpasswordComponent  },
-  { path: 'report/:id', component: Report1Component},
-
-
+  { path: 'help-and-support', component: HelpAndSupportComponent },
+  {
+    path: 'tea',
+    component: TeacherAccComponent,
+    canActivate: [AuthGuard],
+    data: { allowedUserTypes: ['teacher'] },
+  },
+  { path: 'for', component: ForgotpasswordComponent },
+  { path: 'report/:id', component: Report1Component },
 ];
 
 @NgModule({
