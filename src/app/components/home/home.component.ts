@@ -51,7 +51,10 @@ export class HomeComponent {
 
   ngOnInit() {
     if (localStorage.getItem('id')) {
+      console.log('User is logged in');
       this.routeto();
+    } else {
+      return
     }
   }
 }

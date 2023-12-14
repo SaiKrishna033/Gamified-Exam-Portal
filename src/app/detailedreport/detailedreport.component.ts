@@ -7,6 +7,7 @@ import { map, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 
 
+
 interface ApiResponse {
   status?: number;
   message?: string;
@@ -98,6 +99,7 @@ export class DetailedreportComponent {
       },
       (error) => {
         console.error('Error:', error);
+        // Handle error here
       }
     );
 
