@@ -44,12 +44,12 @@ const routes: Routes = [
   { path: 'about-kuhedu-assessment', component: AboutAssessmentComponent },
   { path: 'about-kuhedu-practice', component: AboutPracticeComponent },
   {
-    path: 'teacher-profile',
+    path: 'teacher-registration',
     component: TeacherProfileComponent,
     canActivate: [AuthGuard],
     data: { allowedUserTypes: ['teacher'] },
   },
-  { path: 'student-profile', component: StudentProfileComponent },
+  { path: 'student-registration', component: StudentProfileComponent },
   {
     path: 'teacher-dashboard',
     component: TeacherDashboardComponent,

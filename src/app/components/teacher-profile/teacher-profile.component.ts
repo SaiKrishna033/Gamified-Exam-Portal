@@ -246,7 +246,7 @@ export class TeacherProfileComponent {
             duration: 3000,
             position: 'topRight',
           });
-          this.router.navigate(['/']);
+          this.router.navigate(['/teacher-dashboard']);
         },
         (error) => {
           const errors = error.error.errors;

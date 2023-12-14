@@ -51,6 +51,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { TeacherNavbarComponent } from './components/teacher-navbar/teacher-navbar.component';
 import { HelpAndSupportComponent } from './components/help-and-support/help-and-support.component';
 import { PracticeSetViewerComponent } from './components/practice-set-viewer/practice-set-viewer.component';
+import { DetailedReportChartComponent } from './components/detailed-report-chart/detailed-report-chart.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { PracticeSetViewerComponent } from './components/practice-set-viewer/pra
     TeacherNavbarComponent,
     HelpAndSupportComponent,
     PracticeSetViewerComponent,
+    DetailedReportChartComponent,
   ],
   imports: [
     BrowserModule,

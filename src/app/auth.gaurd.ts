@@ -22,10 +22,12 @@ export class AuthGuard implements CanActivate {
     const userType = this.userService.getUserType();
 
     if (userType && allowedUserTypes.includes(userType)) {
+      console.log('Route Gaurd acted True: ' + userType);
       // User has access
       return true;
     } else {
       // Redirect to a different route for unauthorized users
+      console.log("Route Gaurd acted: " + userType)
       this.router.navigate(['/home']);
       return false;
     }
