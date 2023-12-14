@@ -34,10 +34,11 @@ export class MenubarComponent {
         if (currentRoute == '/kuhu-pin') {
           this.disablemenu = true
         } else if (currentRoute == '/teacher-dashboard') {
-          this.disablemenu = true
-        }
-        else {
-          this.disablemenu = false
+          this.disablemenu = true;
+        } else if (currentRoute.includes('teacher-question-entry')) {
+          this.disablemenu = true;
+        } else {
+          this.disablemenu = false;
         }
         console.log('Current Route:', currentRoute);
       });

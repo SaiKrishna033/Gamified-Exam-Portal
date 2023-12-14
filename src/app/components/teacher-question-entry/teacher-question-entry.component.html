@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>GG</h1>
+
+  <div class="qp">
+    <p>10.</p>
+    <input type="text" />
+  </div>
+
+  <div>
+    <input class="question" type="text" />
+  </div>
+
+  <div class="number_section">
+    <p class="pre_q">{{ current_question_count_v }}</p>
+    <p (click)="handleNextButton()" class="curr_question">
+      {{ current_question_count }}
+    </p>
+    <p class="pre_q">{{ next_question_count }}</p>
+  </div>
+</div>
