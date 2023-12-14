@@ -24,11 +24,14 @@
           class="subjects-card"
           *ngFor="let key of objectKeys(subjectMapping)"
           id="{{ subjectMapping[key][0] | lowercase }}"
+          (click)="handleSubject(key)" 
         >
           <img [src]="subjectMapping[key][1]"
-            (click)="handleSubject(key)" [style.opacity]="selectedSubject === key ? 1 : 0.2"
+            [style.opacity]="selectedSubject === key ? 1 : 0.2"
           />
-          <p>{{ subjectMapping[key][0] }}</p>
+          <p
+            [style.opacity]="selectedSubject === key ? 1 : 0.2"
+          >{{ subjectMapping[key][0] }}</p>
         </div>
       </div>
     </div>
