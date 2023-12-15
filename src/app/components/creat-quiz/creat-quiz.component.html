@@ -24,7 +24,7 @@
           class="subjects-card"
           *ngFor="let key of objectKeys(subjectMapping)"
           id="{{ subjectMapping[key][0] | lowercase }}"
-          (click)="handleSubject(key)" 
+          (click)="handleSubject(key)"
         >
           <img [src]="subjectMapping[key][1]"
             [style.opacity]="selectedSubject === key ? 1 : 0.2"
@@ -40,14 +40,14 @@
       <div class="first">
         <div class="group">
           <label for="">Enter Your Name</label>
-          <input class="input-name" type="text" placeholder="Enter Your Name" />
+          <input [(ngModel)]="name" class="input-name" type="text" placeholder="Enter Your Name" />
         </div>
 
         <div class="selectgroup">
           <label for="">Select Class</label>
 
           <div class="flex-container">
-            <select id="teacher-type" name="teacher-type">
+            <select id="teacher-type" name="teacher-type" [(ngModel)]="tclass">
               <option
                 *ngFor="let key of objectKeys(classMapping)"
                 [value]="key"
@@ -60,8 +60,8 @@
 
         <div class="selectgroup">
           <label for="">Chapter Name</label>
-          <div class="flex-container">
-            <input type="text" class="input-name" placeholder="Enter Chapter name" />
+          <div class="flex-container" >
+            <input type="text" [(ngModel)]="chapterName" class="input-name" placeholder="Enter Chapter name" />
           </div>
         </div>
 
@@ -74,11 +74,8 @@
         <div class="selectgroup">
           <label for="">Difficulty Level</label>
           <div class="flex-container">
-            <select id="teacher-type" name="teacher-type">
-              <option
-                *ngFor="let key of objectKeys(difficultyLevelMapping)"
-                [value]="key"
-              >
+          <select id="difficulty-level" name="difficultyLevel">
+            <option *ngFor="let key of objectKeys(difficultyLevelMapping)" [value]="key">
                 {{difficultyLevelMapping[key]}}
               </option>
             </select>
@@ -89,16 +86,17 @@
       <div class="second">
         <div class="group">
           <label for="">Select Board</label>
-          <input type="text" class="input-name" placeholder="Enter Your Name" />
+          <input type="text" [(ngModel)]="board" class="input-name" placeholder="Enter Your Name" />
         </div>
 
         <div class="group">
           <label for="">Question Type</label>
           <div class="flex-container">
-            <select id="teacher-type" name="teacher-type">
+            <select id="teacher-type" name="teacher-type" [(ngModel)]="question_type">
               <option
                 *ngFor="let key of objectKeys(questionTypeMapping)"
                 [value]="key"
+
               >
                 {{questionTypeMapping[key]}}
               </option>
@@ -109,21 +107,21 @@
         <div class="group">
           <label for="">Number of Questions</label>
           <div class="flex-container">
-           <input class="input-name" type="text" placeholder="Set number of questions" />
+           <input class="input-name" [(ngModel)]="numberofquestions" type="text" placeholder="Set number of questions" />
           </div>
         </div>
 
         <div class="group">
           <label for="">Set Duration</label>
           <div class="flex-container">
-            <input class="input-name" type="text" placeholder="Set Duration (1-120) in Minutes" />
+            <input class="input-name" [(ngModel)]="total_t" type="text" placeholder="Set Duration (1-120) in Minutes" />
           </div>
         </div>
       </div>
     </div>
 
     <div class="thirdcontent">
-      <button class="bluebutton">Generate Code</button>
+      <button class="bluebutton" (click)="openQpopUp()">Generate Code</button>
     </div>
   </div>
 
@@ -153,7 +151,7 @@
 
 
 <div class="overlay" *ngIf="show">
-  <div class="content" >
+  <div class="content" *ngIf="showSpreadSheet">
     <h2 class="modal-heading">Import an Excel sheet</h2>
     <div style="display: flex;">
       <div class="excel-image">
@@ -182,5 +180,70 @@
       <button mat-raised-button (click)="uploadFile()" >Upload</button>
       <button mat-raised-button (click)="closemodal()">Cancel</button>
     </div>
+  </div>
+  <div class="content" *ngIf="showQpopup">
+      <div class="user-box">
+    <form>
+      <div class="form-group">
+        <label for="languageCode" class="form-label">Language Code:</label>
+        <select id="languageCode" name="languageCode" class="form-dropdown"  [(ngModel)]="language_code" >
+          <!-- Add options for Language Code -->
+          <option *ngFor="let key of objectKeys(languageIsoCodeMapping)"
+            [value]="key"
+
+          >
+            {{languageIsoCodeMapping[key]}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="subjectType" class="form-label">Subject Type:</label>
+        <select id="subjectType" name="subjectType" class="form-dropdown" [(ngModel)]="subject_type" >
+          <!-- Add options for Subject Type -->
+          <option
+            *ngFor="let key of objectKeys(subjectTypeMapping)"
+            [value]="key"
+
+            >
+            {{subjectTypeMapping[key]}}
+          </option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="examType" class="form-label">Exam Type:</label>
+        <select id="examType" name="examType" class="form-dropdown"
+         [(ngModel)]="exam_type"
+        >
+         <option
+          *ngFor="let key of objectKeys(examTypeMapping)"
+          [value]="key"
+
+           >
+           {{examTypeMapping[key]}}
+        </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="questionType" class="form-label">Type of Question:</label>
+        <select id="questionType" name="questionType" class="form-dropdown"
+          [(ngModel)]="type_of_question"
+        >
+          <!-- Add options for Type of Question -->
+          <option *ngFor="let key of objectKeys(typeOfQuestion)"
+
+          >
+            {{typeOfQuestion[key]}}
+          </option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+
+      <button (click)="debug()" type="submit">Submit</button>
+    </form>
+  </div>
   </div>
 </div>

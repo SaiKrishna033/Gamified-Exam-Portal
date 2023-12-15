@@ -117,6 +117,70 @@ export class CreatQuizComponent {
 
   selectedSubject: string | null = null;
 
+    // localStorage.setItem('pincode');
+    // localStorage.setItem('subject');
+    // localStorage.setItem('topic_name');
+    // localStorage.setItem('board');
+    // localStorage.setItem('class');
+    // localStorage.setItem('question_type');
+    // localStorage.setItem('total_t');
+    // localStorage.setItem('state_code');
+    // localStorage.setItem('language_code');
+    // localStorage.setItem('subject_type');
+    // localStorage.setItem('exam_type');
+    // localStorage.setItem('type_of_question');
+
+  // ngModel Vars
+  chapterName: string = '';
+  numberofquestions: string = '';
+  name: string = '';
+
+  pincode: string = '';
+  subject: string = '';
+  topic_name: string = '';
+  board: string = '';
+  tclass: string = '';
+  question_type: string = '';
+  total_t: string = '';
+  state_code: string = '';
+  language_code: string = '';
+  subject_type: string = '';
+  exam_type: string = '';
+  type_of_question: string = '';
+
+  debug() {
+    // print all ngModel
+    console.log('chapterName:', this.chapterName);
+    console.log('numberofquestions:', this.numberofquestions);
+    console.log('name:', this.name);
+    console.log('pincode:', this.pincode);
+    console.log('subject:', this.subject);
+    console.log('topic_name:', this.topic_name);
+    console.log('board:', this.board);
+    console.log('class:', this.tclass);
+    console.log('question_type:', this.question_type);
+    console.log('total_t:', this.total_t);
+    console.log('state_code:', this.state_code);
+    console.log('language_code:', this.language_code);
+    console.log('subject_type:', this.subject_type);
+    console.log('exam_type:', this.exam_type);
+    console.log('type_of_question:', this.type_of_question);
+  }
+
+
+  showQpopup: boolean = true;
+  showSpreadSheet: boolean = true;
+
+  openQpopUp() {
+    this.show = true;
+    this.showQpopup = true;
+    this.showSpreadSheet = false;
+  }
+
+  selectedLanguage: string | null = null;
+
+
+
   handleSubject(subjectKey: string): void {
     console.log('Selected subject:', subjectKey);
     this.selectedSubject = subjectKey;

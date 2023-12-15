@@ -28,7 +28,8 @@ export class TeacherQuestionEntryComponent {
   current_question_count: number = 0;
 
   // variables for ngModel Bindings
-  question: string = '';
+  question: string =
+    'Cite the phenomenon when light bends as it passes from one medium to another.';
   option1: string = '';
   option2: string = '';
   option3: string = '';
@@ -48,7 +49,7 @@ export class TeacherQuestionEntryComponent {
   ls_class = localStorage.getItem('class');
   ls_question_type = localStorage.getItem('question_type');
   ls_total_duration_in_minutes = localStorage.getItem('total_t');
-    // TODO: Ask backed weather this for total time or per question time
+  // TODO: Ask backed weather this for total time or per question time
   ls_state_code = localStorage.getItem('state_code');
   ls_language_code = localStorage.getItem('language_code');
   ls_subject_type = localStorage.getItem('subject_type');

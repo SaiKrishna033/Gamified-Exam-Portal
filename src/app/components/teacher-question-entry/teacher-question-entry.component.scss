@@ -1,67 +1,176 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,200;1,400;1,500;1,600;1,700;1,800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,200;1,400;1,500;1,600;1,700;1,800&display=swap');
+// .gjk {
+//   padding-top: 200px;
+// }
+// .toggle {
+//   border: 5px solid #3A6000;
+//   background-color: #f3f7ed;
+//   padding: 20px;
+//   border-radius: 10px;
+//   margin-bottom: 10px;
+//   margin-left: 2%;
+//   margin-right: 2%;
+//   height: 40px;
+//   width: 80%;
+//   margin-left: 10%;
+// }
 
-.container {
-  padding-top: 200px;
-}
+// .row1 {
+//   border: 1px solid #3A6000;
+//   background-color: #304511;
+//   border-radius: 10px;
+//   width: 100px;
+//   height: 75%;
 
-.number_section {
-  display: flex;
-  justify-content: right;
-}
+// }
 
-.number_section * {
-  display: flex;
-  justify-content: right;
-  padding-left: 2rem;
-}
+// .top {
+//   width: 120px;
+//   height: 85%;
+// }
 
-.curr_question {
-  color: var(--Dark-Green, #3A6000);
-  font-family: 'Poppins';
-  font-size: 59.696px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
+// .box {
+//   border: 5px solid #3A6000;
+//   background-color: #F2FFDE;
+//   padding: 20px;
+//   border-radius: 10px;
+//   margin-bottom: 20px;
+//   margin-left: 2%;
+//   margin-right: 2%;
+//   width: 80%;
+//   margin-left: 10%;
+// }
 
-.pre_q {
-  color: #000;
-  font-family: Poppins;
-  font-size: 22.896px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
+// .box .text {
+//   width: 1182px;
+//   height: 139px;
+//   flex-shrink: 0;
+// }
+
+// .text {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .text span {
+//   color: var(--Dark-Green, #3A6000);
+//   font-size: 32.249px;
+//   font-style: normal;
+//   font-weight: 700;
+//   line-height: 35.72px;
+//   text-align: center;
+//   padding-right: 2rem;
+//   /* 110.762% */
+// }
+
+// .text input {
+//   color: var(--Dark-Green, #3A6000);
+//   text-align: left;
+//   font-size: 32.249px;
+//   font-style: normal;
+//   font-weight: 700;
+//   line-height: 35.72px;
+//   word-wrap: break-word;
+//   width: calc(100% - 1rem);
+// }
+
+// .class-box {
+//   color: #090909;
+//   height: 2cm;
+//   background-color: #ffffff;
+//   font-weight: bold;
+//   border-radius: 5px;
+//   border: 2px solid #0e0e0e;
+//   padding: 5px;
+//   margin-bottom: 20px;
+//   text-align: left;
+// }
+
+// .option-box {
+//   margin-left: 2cm;
+// }
+
+// .column {
+//   display: flex;
+//   justify-content: space-between;
+
+//   margin-bottom: 30px;
+//   margin-left: 30px;
+//   margin-right: 30px;
+//   border-radius: 10px;
+// }
+
+// .left-column,
+// .right-column {
+//   width: 46%;
+//   border-radius: 110px;
+// }
+
+// .button5 {
+//   border-radius: 50%;
+// }
+
+// footer.my-custom-nav {
+//   background-color: #ffffff;
+//   border-radius: 30px;
+//   margin-right: 36em;
+//   margin-top: 20px;
+//   display: flex;
+//   align-items: center;
+//   padding: 10px;
+// }
+
+// footer .navbar-brand {
+//   font-weight: bold;
+//   font-size: 0.9rem;
+//   margin-right: auto;
+//   margin-left: 10em;
+// }
+
+// footer .nav-link {
+//   color: white;
+//   background-color: #3a6000;
+//   border: none;
+//   border-radius: 11px;
+//   padding: 5px 10px;
+//   margin: 0 5px;
+//   font-size: 0.9rem;
+//   display: flex;
+//   align-items: center;
+//   cursor: pointer;
+// }
+
+// footer .nav-link span {
+//   margin-left: 0.5em;
+// }
+
+// .noob {
+//   color: white;
+//   height: 1cm;
+//   background-color: #304511;
+//   width: 20%;
+//   border-radius: 5px;
 
 
-.qp {
-  border-radius: 7.7px 7.7px 0px 0px;
-  width: 728px;
-  height: 146px;
-  border: 3.12px solid var(--Dark-Green, #3A6000);
-  background: #9BE12C;
-  box-shadow: 4.2px 4.2px 30.1px 0px rgba(0, 0, 0, 0.25);
-  font-family: Poppins;
-  font-size: 28.62px;
-  font-weight: bold;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+// }
 
-.qp p {
-  width: 20;
-  justify-content: center;
-}
+// .noob1 {
+//   color: white;
+//   height: 1cm;
+//   background-color: #304511;
+//   width: 60%;
+//   border-radius: 5px;
 
-.qp input {
-  width: 80;
-  height: inherit;
-  background: transparent;
-  border: none;
-  font-family: Poppins;
-  font-size: 28.62px;
-  font-weight: bold;
-  outline: none
-}
+
+// }
+
+// .noob2 {
+//   color: white;
+//   height: 1cm;
+//   background-color: #304511;
+//   width: 18%;
+//   border-radius: 5px;
+// }
