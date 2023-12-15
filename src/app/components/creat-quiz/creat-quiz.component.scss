@@ -2,8 +2,8 @@
   font-family: "Poppins";
 }
 .container {
-  width: 100%;
-  height: auto;
+  min-width: 100dvh;
+  min-height: 100dvh; // use dvh for better scalling
   display: flex;
 
   align-items: center;
