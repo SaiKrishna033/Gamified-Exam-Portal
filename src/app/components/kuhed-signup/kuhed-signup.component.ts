@@ -79,11 +79,11 @@ export class KuhedSignupComponent {
             this.signUp = true;
             this.toast.success({
               detail: 'SUCCESS',
-              summary: 'Verification Successful',
+              summary: 'Verification Successful, you can login now.',
               duration: 3000,
               position: 'topRight',
             });
-            this.router.navigate(['/login']);
+            this.router.navigate(['/home']);
           }
         },
         (error) => {
