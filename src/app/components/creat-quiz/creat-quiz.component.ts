@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { KuheduServiceService } from 'src/app/kuhedu-service.service';
 import { UserService } from '../../user.service';
 import { EncryptionService } from '../../shared/services/encryption.service';
+import { map, catchError } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
 
 
 interface Mapping {
@@ -12,6 +14,17 @@ interface Mapping {
 
 interface valuePathMapping {
   [key: string]: [string, string];
+}
+
+interface pinCodeResponse {
+  status: number;
+  message: {
+    pin: number;
+  };
+  data: [];
+  meta: {};
+  errors: [];
+  info: {};
 }
 
 @Component({
@@ -161,6 +174,17 @@ export class CreatQuizComponent {
     this.show = true;
     this.showQpopup = true;
     this.showSpreadSheet = false;
+
+    // get pincode
+    this.fetchAnewpincode().subscribe(
+      (resData) => {
+        this.pincode = resData.message.pin.toString();
+      },
+      (error) => {
+        console.error('Error:', error);
+        // Handle error here
+      }
+    );
   }
 
   closeQpopup() {
@@ -244,5 +268,15 @@ export class CreatQuizComponent {
 
       this.selectedFile = null;
     }
+  }
+
+  fetchAnewpincode(): Observable<pinCodeResponse> {
+    const ENDPOINT = 'question/generate-unique-pin';
+    const headers = new HttpHeaders({
+      Authorization: 'Bearer ' + this.userService.getAccessToken(),
+    });
+
+    return this.http
+      .get<pinCodeResponse>(this.kuheduService.baseUrl + ENDPOINT, { headers });
   }
 }

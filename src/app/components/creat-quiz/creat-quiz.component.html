@@ -112,14 +112,14 @@
         <div class="group">
           <label for="">Number of Questions</label>
           <div class="flex-container">
-           <input class="input-name" [(ngModel)]="numberofquestions" type="text" placeholder="Set number of questions" />
+           <input class="input-name" [(ngModel)]="numberofquestions" type="number" placeholder="Set number of questions" />
           </div>
         </div>
 
         <div class="group">
           <label for="">Set Duration</label>
           <div class="flex-container">
-            <input class="input-name" [(ngModel)]="total_t" type="text" placeholder="Set Duration (1-120) in Minutes" />
+            <input class="input-name" [(ngModel)]="total_t" type="number" placeholder="Set Duration (1-120) in Minutes" />
           </div>
         </div>
       </div>
@@ -239,7 +239,7 @@
         >
           <!-- Add options for Type of Question -->
           <option *ngFor="let key of objectKeys(typeOfQuestion)"
-
+          [value]="key"
           >
             {{typeOfQuestion[key]}}
           </option>
