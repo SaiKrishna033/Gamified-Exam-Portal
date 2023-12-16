@@ -61,7 +61,7 @@
         <div class="selectgroup">
           <label for="">Chapter Name</label>
           <div class="flex-container" >
-            <input type="text" [(ngModel)]="chapterName" class="input-name" placeholder="Enter Chapter name" />
+            <input type="text" [(ngModel)]="topic_name" class="input-name" placeholder="Enter Chapter name" />
           </div>
         </div>
 
@@ -86,7 +86,12 @@
       <div class="second">
         <div class="group">
           <label for="">Select Board</label>
-          <input type="text" [(ngModel)]="board" class="input-name" placeholder="Enter Your Name" />
+          <!-- <input type="text" [(ngModel)]="board" class="input-name" placeholder="Enter Your Name" /> -->
+          <select name="difficulty-level" name="boardSelection" [(ngModel)]="board">
+            <option *ngFor="let key of objectKeys(boardMapping)" [value]="key">
+              {{boardMapping[key]}}
+            </option>
+          </select>
         </div>
 
         <div class="group">
@@ -243,6 +248,7 @@
       </div>
 
       <button (click)="debug()" type="submit">Submit</button>
+      <button (click)="closeQpopup()">Cancel</button>
     </form>
   </div>
   </div>

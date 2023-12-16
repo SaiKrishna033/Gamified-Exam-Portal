@@ -117,19 +117,6 @@ export class CreatQuizComponent {
 
   selectedSubject: string | null = null;
 
-    // localStorage.setItem('pincode');
-    // localStorage.setItem('subject');
-    // localStorage.setItem('topic_name');
-    // localStorage.setItem('board');
-    // localStorage.setItem('class');
-    // localStorage.setItem('question_type');
-    // localStorage.setItem('total_t');
-    // localStorage.setItem('state_code');
-    // localStorage.setItem('language_code');
-    // localStorage.setItem('subject_type');
-    // localStorage.setItem('exam_type');
-    // localStorage.setItem('type_of_question');
-
   // ngModel Vars
   chapterName: string = '';
   numberofquestions: string = '';
@@ -142,7 +129,7 @@ export class CreatQuizComponent {
   tclass: string = '';
   question_type: string = '';
   total_t: string = '';
-  state_code: string = '';
+  state_code: string = 'IN';
   language_code: string = '';
   subject_type: string = '';
   exam_type: string = '';
@@ -167,8 +154,7 @@ export class CreatQuizComponent {
     console.log('type_of_question:', this.type_of_question);
   }
 
-
-  showQpopup: boolean = true;
+  showQpopup: boolean = false;
   showSpreadSheet: boolean = true;
 
   openQpopUp() {
@@ -177,13 +163,18 @@ export class CreatQuizComponent {
     this.showSpreadSheet = false;
   }
 
+  closeQpopup() {
+    this.show = false;
+    this.showQpopup = false;
+    this.showSpreadSheet = true;
+  }
+
   selectedLanguage: string | null = null;
-
-
 
   handleSubject(subjectKey: string): void {
     console.log('Selected subject:', subjectKey);
     this.selectedSubject = subjectKey;
+    this.subject = subjectKey;
   }
 
   openModal(): void {
@@ -227,8 +218,10 @@ export class CreatQuizComponent {
     const formData = new FormData();
 
     const headers = new HttpHeaders({
-      Authorization: 'Bearer ' + this.keySvc.decryptData(this.userService.getAccessToken() || ''),
-    })
+      Authorization:
+        'Bearer ' +
+        this.keySvc.decryptData(this.userService.getAccessToken() || ''),
+    });
 
     if (this.selectedFile) {
       // Implement your file upload logic here
@@ -237,12 +230,14 @@ export class CreatQuizComponent {
 
       // Upload
       this.http
-        .post(this.kuheduService.baseUrl + uploadEndpoint, formData, { headers })
+        .post(this.kuheduService.baseUrl + uploadEndpoint, formData, {
+          headers,
+        })
         .subscribe((res: any) => {
           if (res.status === 200) {
             console.log('Upload response:', res);
             if (res.status === 200) {
-              this.closemodal()
+              this.closemodal();
             }
           }
         });
