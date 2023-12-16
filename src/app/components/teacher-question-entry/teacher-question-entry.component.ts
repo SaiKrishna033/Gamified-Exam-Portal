@@ -6,6 +6,10 @@ import { UserService } from '../../user.service';
 import { EncryptionService } from '../../shared/services/encryption.service';
 import { NgToastService } from 'ng-angular-popup';
 
+interface Mapping {
+  [key: string]: string;
+}
+
 @Component({
   selector: 'app-teacher-question-entry',
   templateUrl: './teacher-question-entry.component.html',
@@ -25,7 +29,9 @@ export class TeacherQuestionEntryComponent {
   clock: string = '';
   title: any;
   number_of_questions: any;
-  current_question_count: number = 0;
+  current_question_count: number = 1;
+
+  objectKeys = Object.keys;
 
   // variables for ngModel Bindings
   question: string =
@@ -35,8 +41,16 @@ export class TeacherQuestionEntryComponent {
   option3: string = '';
   option4: string = '';
   correct_option: string = '';
-  solution_text: string = '';
+  solution_text: string = 'Soulution text'; // TODO: make changes in both FE and binding
   difficulty_level: number = 0;
+
+  difficultyLevelMapping: Mapping = {
+    '01': 'Easy',
+    '02': 'Moderate',
+    '03': 'Complex',
+    '04': 'Advanced',
+    '05': 'Expert',
+  };
 
   current_question_count_v: number | string = '';
   next_question_count: number | string = 1;
@@ -63,7 +77,7 @@ export class TeacherQuestionEntryComponent {
     this.option2 = '';
     this.option3 = '';
     this.option4 = '';
-    this.correct_option = '';
+    // this.correct_option = '';
     this.difficulty_level = 0;
   }
 
@@ -89,18 +103,54 @@ export class TeacherQuestionEntryComponent {
     console.log(this.number_of_questions);
   }
 
+  handleCorectAnswer(opt: number) {
+    console.log(opt);
+    this.correct_option = opt.toString();
+  }
   handleNextButton() {
     if (this.current_question_count >= this.number_of_questions) {
       console.log('Its done brother');
       this.next_question_count = '';
     } else {
+      this.submitQuestion();
       this.current_question_count += 1;
       this.current_question_count_v = this.current_question_count - 1;
       this.next_question_count = this.current_question_count + 1;
     }
 
     if (this.current_question_count == this.number_of_questions) {
-      this.resetLocalStorage();
+      // this.resetLocalStorage();
+    }
+  }
+
+  body_validate() {
+    // cant be empty of null
+    if (
+      this.ls_pincode == '' ||
+      this.ls_subject == '' ||
+      this.ls_board == '' ||
+      this.ls_class == '' ||
+      this.ls_question_type == '' ||
+      this.ls_topic_name == '' ||
+      this.number_of_questions == '' ||
+      this.difficulty_level == 0 ||
+      this.ls_total_duration_in_minutes == '' ||
+      this.ls_state_code == '' ||
+      this.ls_language_code == '' ||
+      this.ls_subject_type == '' ||
+      this.ls_exam_type == '' ||
+      this.ls_type_of_question == '' ||
+      this.question == '' ||
+      this.option1 == '' ||
+      this.option2 == '' ||
+      this.option3 == '' ||
+      this.option4 == '' ||
+      this.solution_text == '' ||
+      this.correct_option == ''
+    ) {
+      return false;
+    } else {
+      return true;
     }
   }
 
@@ -109,6 +159,16 @@ export class TeacherQuestionEntryComponent {
     const headers = new HttpHeaders({
       Authorization: 'Bearer ' + this.userService.getAccessToken(),
     });
+
+    // if (this.body_validate()) {
+    //   this.toast.warning({
+    //     detail: 'Question submission failed',
+    //     summary: 'Failed due to: ' + 'All fields are required',
+    //     duration: 3000,
+    //     position: 'topRight',
+    //   });
+    //   return;
+    // }
 
     const body = {
       pin: this.ls_pincode,
@@ -133,6 +193,8 @@ export class TeacherQuestionEntryComponent {
       solution_text: this.solution_text,
       correct_option: this.correct_option,
     };
+
+    console.log(body)
 
     this.http
       .post(this.kuheduService.baseUrl + ENDPOINT, body, {

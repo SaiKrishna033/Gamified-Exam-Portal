@@ -138,7 +138,7 @@ p {
   display: flex;
   flex-direction: column;
   width: calc(100dvw - 20dvw);
-  height: 70dvh;
+  height: 65dvh;
   padding-top: 20px;
 }
 
@@ -233,6 +233,10 @@ p {
   flex-direction: column;
 }
 
+.optSelectAns {
+  cursor: pointer;
+}
+
 .option input {
   all: unset;
 
@@ -244,4 +248,40 @@ p {
   font-weight: 700;
   line-height: 35.72px;
   /* 110.762% */
+}
+
+
+.btm_bar {
+  // make appear right
+  width: calc(100dvw - 20dvw);
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: right;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.cur_prog {
+  color: var(--Dark-Green, #3A6000);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 59.696px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.btm_bar * {
+  margin-left: 20px;
+}
+
+.gry_prog {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 22.896px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }

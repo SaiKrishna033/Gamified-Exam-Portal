@@ -59,11 +59,14 @@
           stroke-linejoin="round"
         />
       </svg>
-      <p class="timer">0:00</p>
+      <p class="timer">{{ls_total_duration_in_minutes}} Min</p>
     </div>
     <div class="mid_box">
-      <select class="topic_name" id="">
+      <select class="topic_name" [(ngModel)]="difficulty_level" id="">
         <option value="Select A Topic" disabled selected>Select A Topic</option>
+        <option *ngFor="let key of objectKeys(difficultyLevelMapping)" [value]="key">
+                {{difficultyLevelMapping[key]}}
+              </option>
       </select>
       <svg
         class="sa1"
@@ -121,17 +124,17 @@
           fill="white"
         />
       </svg>
-      <p class="sol_text">Solution</p>
+      <p class="sol_text">Solution {{correct_option}}</p>
     </div>
   </div>
   <div class="qe_box_container">
     <div class="sec1">
       <div class="w10"></div>
       <div class="w10">
-        <p class="question_number">10.</p>
+        <p class="question_number">{{current_question_count}}.</p>
       </div>
       <div class="w80">
-        <input type="text" value="Why are you like that anyway" name="" id="" />
+        <input type="text" [(ngModel)]="question" [value]="question" name="" id="" />
       </div>
     </div>
     <div class="sec2"></div>
@@ -140,34 +143,42 @@
         <div class="option">
           <div class="optID">
             <div class="optIDText">A</div>
-            <div class="optSelectAns">T</div>
+            <div (click)="handleCorectAnswer(1)" class="optSelectAns">T</div>
           </div>
-          <input type="text" value="option" class="optText" />
+          <input type="text" [(ngModel)]="option1" [value]="option1" class="optText" />
         </div>
         <div class="option">
           <div class="optID">
-            <div class="optIDText">A</div>
-            <div class="optSelectAns">T</div>
+            <div class="optIDText">B</div>
+            <div (click)="handleCorectAnswer(2)" class="optSelectAns">T</div>
           </div>
-          <input type="text" value="option" class="optText" />
+          <input type="text" [(ngModel)]="option2" [value]="option2" class="optText" />
         </div>
       </div>
       <div class="opt_cntnr">
         <div class="option">
           <div class="optID">
-            <div class="optIDText">A</div>
-            <div class="optSelectAns">T</div>
+            <div class="optIDText">C</div>
+            <div (click)="handleCorectAnswer(3)" class="optSelectAns">T</div>
           </div>
-          <input type="text" value="option" class="optText" />
+          <input type="text" [(ngModel)]="option3" [value]="option3" class="optText" />
         </div>
         <div class="option">
           <div class="optID">
-            <div class="optIDText">A</div>
-            <div class="optSelectAns">T</div>
+            <div class="optIDText">D</div>
+            <div (click)="handleCorectAnswer(4)" class="optSelectAns">T</div>
           </div>
-          <input type="text" value="option" class="optText" />
+          <input type="text" [(ngModel)]="option4" [value]="option4" class="optText" />
         </div>
       </div>
     </div>
+  </div>
+  <div class="btm_bar">
+    <p class="gry_prog"> {{current_question_count_v}} </p>
+    <p (click)="handleNextButton()" class="cur_prog"> {{current_question_count}} </p>
+    <p class="gry_prog"> {{next_question_count}} </p>
+    <!--
+      * TODO: Add submit button even there is technical use case for it
+     -->
   </div>
 </div>
