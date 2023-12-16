@@ -7,6 +7,13 @@ import { EncryptionService } from '../../shared/services/encryption.service';
 import { map, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 
+/*
+  * This page contains BS logics
+  *      - keep your BS filter on
+  *
+  * TODO: make a good logic to pass data to next page ( for future devs if some maintains it )
+*/
+
 
 interface Mapping {
   [key: string]: string;
@@ -165,7 +172,29 @@ export class CreatQuizComponent {
     console.log('subject_type:', this.subject_type);
     console.log('exam_type:', this.exam_type);
     console.log('type_of_question:', this.type_of_question);
+
+    this.setLocalStorage();
+    this.router.navigate(['/teacher-question-entry', this.numberofquestions]);
   }
+
+  setLocalStorage() {
+    localStorage.setItem('chapterName', this.chapterName);
+    localStorage.setItem('numberofquestions', this.numberofquestions);
+    localStorage.setItem('name', this.name);
+    localStorage.setItem('pincode', this.pincode);
+    localStorage.setItem('subject', this.subject);
+    localStorage.setItem('topic_name', this.topic_name);
+    localStorage.setItem('board', this.board);
+    localStorage.setItem('class', this.tclass);
+    localStorage.setItem('question_type', this.question_type);
+    localStorage.setItem('total_t', this.total_t);
+    localStorage.setItem('state_code', this.state_code);
+    localStorage.setItem('language_code', this.language_code);
+    localStorage.setItem('subject_type', this.subject_type);
+    localStorage.setItem('exam_type', this.exam_type);
+    localStorage.setItem('type_of_question', this.type_of_question);
+  }
+
 
   showQpopup: boolean = false;
   showSpreadSheet: boolean = true;
