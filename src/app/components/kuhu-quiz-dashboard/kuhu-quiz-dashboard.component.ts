@@ -5,6 +5,19 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Router } from '@angular/router';
 import { KuheduServiceService } from 'src/app/kuhedu-service.service';
 
+
+interface sharedQuizResults {
+  totalQuestions: number;
+  averageTime: number;
+  notAttempted: number;
+  correctAnswers: number;
+  incorrectAnswers: number;
+  totalTimeTaken: number;
+  startTime: string;
+  endTime: string;
+  pincode: string;
+}
+
 @Component({
   selector: 'app-kuhu-quiz-dashboard',
   templateUrl: './kuhu-quiz-dashboard.component.html',
@@ -17,15 +30,45 @@ export class KuhuQuizDashboardComponent {
   mcq_template_id!: string;
   total_questions!: string
   class!: number;
+  state: any;
 
+  totalQuestions: number = 0;
+  averageTime: number = 0;
+  notAttempted: number = 0;
+  correctAnswers: number = 0;
+  incorrectAnswers: number = 0;
+  totalTimeTaken: number = 0;
+  testStartTime: string = "";
+  testEndTime: string = "";
+  pincode: string = "";
 
-  constructor(private keySvc: EncryptionService, private router: Router, private kuheduService: KuheduServiceService,) { }
+  dateString: string = new Date().toLocaleDateString();
+
+  constructor(private keySvc: EncryptionService, private router: Router, private kuheduService: KuheduServiceService,) {
+    const navigation = this.router.getCurrentNavigation();
+    const state = navigation?.extras.state as { data: sharedQuizResults };
+    this.state = state;
+
+    if (this.state) {
+      this.totalQuestions = this.state.data.totalQuestions;
+      this.averageTime = this.state.data.averageTime;
+      this.notAttempted = this.state.data.notAttempted;
+      this.correctAnswers = this.state.data.correctAnswers;
+      this.incorrectAnswers = this.state.data.incorrectAnswers;
+      this.totalTimeTaken = this.state.data.totalTimeTaken;
+      this.testStartTime = this.state.data.startTime;
+      this.testEndTime = this.state.data.endTime;
+      this.pincode = this.state.data.pincode;
+    } else {
+      this.router.navigate(['/kuhu-pin']);
+    }
+  }
 
   accessToken: string = '';
   _accessToken: string = '';
   reportsVisibile = false;
   ngOnInit(): void {
-    debugger
+
     this.kuheduService.DashbaordData.subscribe(res => {
       console.log(res)
       this.topic_name = res.data.item.topic

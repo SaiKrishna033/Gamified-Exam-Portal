@@ -6,18 +6,17 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-clock',
   templateUrl: './clock.component.html',
-  styleUrls: ['./clock.component.scss']
+  styleUrls: ['./clock.component.scss'],
 })
-
 export class ClockComponent implements OnInit, OnDestroy {
   @Input() initialTime!: number;
   @Output() timeRemaining = new EventEmitter<number>();
 
-  faPause=faPause;
-  faPlay=faPlay;
+  faPause = faPause;
+  faPlay = faPlay;
 
   remainingTime: number = 0;
-  time: string = "00:00";
+  time: string = '00:00';
   isClockRunning = false;
   private clockSubscription: Subscription = Subscription.EMPTY;
 
@@ -28,7 +27,6 @@ export class ClockComponent implements OnInit, OnDestroy {
   ngOnInit() {
     // this.startClock();
     // this.remainingTime = this.initialTime;
-
     // console.log("IIinitialTime:" + this.initialTime + "    type:" + typeof (this.initialTime));
   }
 
@@ -96,6 +94,14 @@ export class ClockComponent implements OnInit, OnDestroy {
     const minutes = Math.floor((this._initialTime - this.remainingTime) / 60);
     const seconds = (this._initialTime - this.remainingTime) % 60;
     return [minutes, seconds];
+  }
+
+  getElapsedTimeInSeconds(): number {
+    return this._initialTime - this.remainingTime;
+  }
+
+  getRemainingTimeInSeconds(): number {
+    return this.remainingTime;
   }
 
   private formatTime(time: number): string {

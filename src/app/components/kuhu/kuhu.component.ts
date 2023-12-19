@@ -12,6 +12,15 @@ import { Router } from '@angular/router';
 import { KuheduServiceService } from 'src/app/kuhedu-service.service';
 import { ActivatedRoute } from '@angular/router';
 
+interface studentResponse {
+  question_number: number;
+  isChosen: boolean;
+  isCorrect: boolean;
+  chosenOption: number;
+  isTimeElapsed: boolean;
+  responseTimeInSeconds: number;
+}
+
 @Component({
   selector: 'app-kuhu',
   templateUrl: './kuhu.component.html',
@@ -67,6 +76,9 @@ export class KuhuComponent {
   topic: string = '';
   difficulty_level: string = '';
 
+  // dataHandler
+  dataHandlerObj: dataHandler | undefined;
+
   //execute on component init
   ngOnInit(): void {
     var pin = this.route.snapshot.params['pin'];
@@ -78,53 +90,56 @@ export class KuhuComponent {
     const headers = new HttpHeaders({
       'frontend-header': '5403e66a-b2e7-49a7-b052-d762a3cfb8b3',
     });
-    if(pin)
-    {
+    if (pin) {
+      this.http
+        .get<_kuhuItem>(
+          this.kuheduService.baseUrl +
+            'question/get-all-questions-using-pin?pin=' +
+            pin,
+          { headers }
+        )
 
-    this.http
-      .get<_kuhuItem>(
-        this.kuheduService.baseUrl +
-          'question/get-all-questions-using-pin?pin='+pin,
-        { headers }
-      )
+        .subscribe((apidata) => {
+          console.log(apidata);
+          this._kuhuItem_ = apidata;
+          this.kuheduService.DashbaordData.next(apidata);
 
+          console.log(this._kuhuItem_.data.item);
+          this.totalTimeInSeconds =
+            this._kuhuItem_.data.item.duration_in_seconds;
+          this.timeRemaining = this.totalTimeInSeconds;
+          this.totalTimeInSeconds_item =
+            this._kuhuItem_.data.item.duration_in_seconds_per_item;
+          this.timeRemaining_item = this.totalTimeInSeconds_item;
+          this.kuhuObj = this._kuhuItem_.data.item;
+          this.total_questions = this._kuhuItem_.data.item.total_questions;
+          this.subject = this._kuhuItem_.data.item.subject;
+          this.topic = this._kuhuItem_.data.item.topic;
+          this.difficulty_level = this._kuhuItem_.data.item.difficulty_level;
+          this.questions = this._kuhuItem_.data.item.questions;
 
+          for (var i = 0; i < this.total_questions; i++) {
+            this._kuhustate = KuhuItemStateObj.create({
+              question_number: i + 1,
+              isChosen: false,
+              isCorrect: false,
+              chosenOption: 0,
+              isTimeElapsed: false,
+              responseTimeInSeconds: 0,
+              remainingTimeInSeconds: 0,
+              option1_state: '',
+              option2_state: '',
+              option3_state: '',
+              option4_state: '',
+            });
+            this.kuhu_state.push(this._kuhustate);
+          }
 
-      .subscribe((apidata) => {
-        console.log(apidata);
-        this._kuhuItem_ = apidata;
-        this.kuheduService.DashbaordData.next(apidata);
-
-        console.log(this._kuhuItem_.data.item);
-        this.totalTimeInSeconds = this._kuhuItem_.data.item.duration_in_seconds;
-        this.timeRemaining = this.totalTimeInSeconds;
-        this.totalTimeInSeconds_item =
-          this._kuhuItem_.data.item.duration_in_seconds_per_item;
-        this.timeRemaining_item = this.totalTimeInSeconds_item;
-        this.kuhuObj = this._kuhuItem_.data.item;
-        this.total_questions = this._kuhuItem_.data.item.total_questions;
-        this.subject = this._kuhuItem_.data.item.subject;
-        this.topic = this._kuhuItem_.data.item.topic;
-        this.difficulty_level = this._kuhuItem_.data.item.difficulty_level;
-        this.questions = this._kuhuItem_.data.item.questions;
-
-        for (var i = 0; i < this.total_questions; i++) {
-          this._kuhustate = KuhuItemStateObj.create({
-            question_number: i + 1,
-            isChosen: false,
-            isCorrect: false,
-            chosenOption: 0,
-            isTimeElapsed: false,
-            responseTimeInSeconds: 0,
-            remainingTimeInSeconds: 0,
-            option1_state: '',
-            option2_state: '',
-            option3_state: '',
-            option4_state: '',
-          });
-          this.kuhu_state.push(this._kuhustate);
-        }
-      });
+          this.dataHandlerObj = new dataHandler(
+            this.totalTimeInSeconds,
+            this.total_questions
+          );
+        });
     }
   }
 
@@ -146,12 +161,19 @@ export class KuhuComponent {
     this.showModal = false;
   }
   //User actions
+  startTime: string = "";
   startPlay() {
     this.showPlay = false;
     this.showPrev = false;
     this.showNext = true;
     this.startHover = true;
 
+    // start time in AM/PM format
+    this.startTime = new Date().toLocaleString('en-US', {
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+    });
     this.startClock();
   }
 
@@ -175,7 +197,44 @@ export class KuhuComponent {
   }
 
   submitClick() {
-    this.router.navigate(['/kuhu-quiz-dashboard']);
+    /**
+     * Total number of questions
+        Average Time spend per question
+        Not Attempted
+        Correct Answers
+        Incorrect Answers
+        Total Time taken
+     *
+     */
+
+    const pincode = this.route.snapshot.params['pin'];
+    const totalQuestions = this.total_questions;
+    const averageTime = this.dataHandlerObj?.getAverageTime();
+    const notAttempted = this.dataHandlerObj?.getNumberOfUnattempted();
+    const correctAnswers = this.dataHandlerObj?.getCorrectAnswers();
+    const incorrectAnswers = this.dataHandlerObj?.getIncorrectAnswers();
+    const totalTimeTaken = this.dataHandlerObj?.getTimetaken();
+    const startTime = this.startTime;
+    const endTime = new Date().toLocaleString('en-US', {
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+    });
+
+    const data = {
+      totalQuestions,
+      averageTime,
+      notAttempted,
+      correctAnswers,
+      incorrectAnswers,
+      totalTimeTaken,
+      startTime,
+      endTime,
+      pincode
+    }
+
+    console.log(data);
+    this.router.navigate(['/kuhu-quiz-dashboard'], {state: {data: data}});
   }
 
   nextClick() {
@@ -224,6 +283,23 @@ export class KuhuComponent {
           .questions[this.question_no - 1].answers[item - 1].isCorrect
           ? true
           : false;
+
+        const elapSedTime = this.clock_item.getElapsedTimeInSeconds();
+        console.log('Elapsed Time (Item):' + elapSedTime);
+
+        // TODO: move the data assigning to NextClick() when its fixed
+        const data: studentResponse = {
+          question_number: this.question_no,
+          isChosen: true,
+          isCorrect: this.kuhuObj.questions[this.question_no - 1].answers[item - 1].isCorrect,
+          chosenOption: item,
+          isTimeElapsed: elapSedTime >= this.totalTimeInSeconds_item, // TODO: verify the logic
+          responseTimeInSeconds: elapSedTime,
+        };
+        this.dataHandlerObj?.addData(data);
+
+        this.clock_item.restartTimer();
+
         if (item - 1 == 0) {
           this.kuhu_state[this.question_no - 1].option1_state = this.kuhuObj
             .questions[this.question_no - 1].answers[0].isCorrect
@@ -301,7 +377,6 @@ export class KuhuComponent {
         //  this.nextClick();
         setTimeout(() => {
           console.log(this.startHover);
-
           this.nextref.nativeElement.click();
         }, 1000);
       }
@@ -351,5 +426,67 @@ export class KuhuComponent {
   onTimeRemaining_item(timeInSeconds_item: number) {
     this.timeRemaining_item = timeInSeconds_item;
     console.log('Remaining seconds (Item):' + this.timeRemaining_item);
+  }
+}
+
+
+class dataHandler {
+  data_store: studentResponse[] = [];
+
+  constructor(
+    totalTimeInSeconds: number,
+    totalQuestions: number,
+  ) {
+
+  }
+
+  addData(student_res: studentResponse) {
+    this.data_store[student_res.question_number - 1] = student_res;
+  }
+
+  getAverageTime() {
+    var totalTime = 0;
+    this.data_store.forEach((element) => {
+      totalTime += element.responseTimeInSeconds;
+    });
+    return (totalTime / this.data_store.length);
+  }
+
+  getCorrectAnswers() {
+    var correctAnswers = 0;
+    this.data_store.forEach((element) => {
+      if (element.isCorrect) {
+        correctAnswers++;
+      }
+    });
+    return correctAnswers;
+  }
+  getIncorrectAnswers() {
+    var incorrectAnswers = 0;
+    this.data_store.forEach((element) => {
+      if (!element.isCorrect) {
+        incorrectAnswers++;
+      }
+    });
+    return incorrectAnswers;
+  }
+
+  getTimetaken() {
+    // in Minutes
+    var totalTime = 0;
+    this.data_store.forEach((element) => {
+      totalTime += element.responseTimeInSeconds;
+    });
+    return totalTime / 60;
+  }
+
+  getNumberOfUnattempted() {
+    var unattempted = 0;
+    this.data_store.forEach((element) => {
+      if (!element.isChosen) {
+        unattempted++;
+      }
+    });
+    return unattempted;
   }
 }
