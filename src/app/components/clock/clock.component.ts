@@ -92,6 +92,12 @@ export class ClockComponent implements OnInit, OnDestroy {
     return [minutes, seconds];
   }
 
+  getTimeSpent(): number[] {
+    const minutes = Math.floor((this._initialTime - this.remainingTime) / 60);
+    const seconds = (this._initialTime - this.remainingTime) % 60;
+    return [minutes, seconds];
+  }
+
   private formatTime(time: number): string {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
