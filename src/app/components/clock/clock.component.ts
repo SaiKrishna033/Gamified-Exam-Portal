@@ -21,6 +21,10 @@ export class ClockComponent implements OnInit, OnDestroy {
   isClockRunning = false;
   private clockSubscription: Subscription = Subscription.EMPTY;
 
+  // preserve first value of initialTime
+  private _initialTime!: number;
+  private isInitialTimeSet = false;
+
   ngOnInit() {
     // this.startClock();
     // this.remainingTime = this.initialTime;
@@ -33,6 +37,11 @@ export class ClockComponent implements OnInit, OnDestroy {
   }
 
   startClock() {
+    if (!this.isInitialTimeSet) {
+      this._initialTime = this.initialTime;
+      this.isInitialTimeSet = true;
+    }
+
     this.remainingTime = this.initialTime;
     //console.log("IIinitialTime:" + this.initialTime + "    type:" + typeof (this.initialTime));
 
