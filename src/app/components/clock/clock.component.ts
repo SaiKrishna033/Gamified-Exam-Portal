@@ -74,6 +74,24 @@ export class ClockComponent implements OnInit, OnDestroy {
     }
   }
 
+  resetTimer() {
+    this.initialTime = this._initialTime;
+    this.remainingTime = this.initialTime;
+    this.time = this.formatTime(this.remainingTime);
+  }
+
+  restartTimer() {
+    this.stopClock();
+    this.resetTimer();
+    this.startClock();
+  }
+
+  getCurrentTime(): number[] {
+    const minutes = Math.floor(this.remainingTime / 60);
+    const seconds = this.remainingTime % 60;
+    return [minutes, seconds];
+  }
+
   private formatTime(time: number): string {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
