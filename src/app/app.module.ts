@@ -8,7 +8,9 @@ import {
 } from 'ngx-google-analytics';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MockApiInterceptor } from './shared/services/mock-api.interceptor';
+import { MockDataService } from './shared/services/mock-data.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -112,7 +114,15 @@ import { TeacherQuestionEntryComponent } from './components/teacher-question-ent
     }),
     NgToastModule,
   ],
-  providers: [DatePipe],
+  providers: [
+    DatePipe,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useFactory: (mockDataService: MockDataService) => new MockApiInterceptor(mockDataService),
+      multi: true,
+      deps: [MockDataService]
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
